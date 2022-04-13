@@ -1,0 +1,31 @@
+*{font-size: 20px;}
+
+div{border: solid 1px white}
+
+.container{
+  min-height: 100vh;
+  width: 1200px;
+  margin: 0 auto;
+
+}
+
+
+
+.container{
+  display:grid;
+  grid-template-rows: 60px 1fr;
+  grid-template-columns:2fr 10fr ;
+  grid-gap:10px;
+
+  grid-template-areas: 
+  "h h"
+  "n c";
+  
+} 
+
+body{background-color: rgba(97, 22, 210, 0.374);}
+
+
+
+
+
