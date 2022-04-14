@@ -16,10 +16,10 @@ const MyPosts = () => {
             </div>
 
             <div className={s.posts}>
-                <Post/>
-                <Post/>
-                <Post/>
-                <Post/>
+                <Post message='Hi gays'/>
+                <Post message='Glory  to Ucraine'/>
+                <Post message='Russia shit '/>
+                <Post message='I am the boss here'/>
             </div>
         </div>
     )
