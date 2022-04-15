@@ -5,6 +5,10 @@ import Dialogs from './components/Dialogs/Dialogs';
 import Header from './components/Header/Header'
 import Nav from './components/Nav/Nav'
 import Profile from './components/Profile/Profile'
+import Music from './components/Music/Music';
+import News from './components/News/News'
+import Settings from './components/settings/settings'
+
 
 
 
@@ -19,6 +23,10 @@ const app = () => {
                 <Routes>
                     <Route path='/dialogs' element={<Dialogs />} />
                     <Route path='/profile' element={<Profile />} />
+                    <Route path='/Music' element={<Music />} />
+                    <Route path='/News' element={<News />} />
+                    <Route path='/Settings' element={<Settings />} />
+
                 </Routes> 
                
 
