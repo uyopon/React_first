@@ -8,13 +8,13 @@ import Profile from './components/Profile/Profile'
 
 const app = () => {
     return (
-        <div className='app-wrapper-content'>
+        <div className='app-wrapper'>
             <Header />
             <Nav />
             {/* <Profile/>  */}
             <div className='app-wrapper-content'>
                 <Dialogs />
-            </div>
+            </div> 
 
         </div>
     )
