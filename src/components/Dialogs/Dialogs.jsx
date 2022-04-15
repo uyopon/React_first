@@ -3,7 +3,7 @@ import s from './Dialogs.module.css'
 
 const Dialogs = (props) => {
     return(
-        <div>Dialogs</div>
+        <div class = {s.content}>Dialogs</div>
 
 
 

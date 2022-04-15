@@ -5,7 +5,7 @@ import s from './Profile.module.css'
 const Profile = () => {
     return (
 
-        <div className={s.content}>
+        <div >
             <div>
                 <img src='https://assets.weforum.org/article/image/large_oJiIJtxAsQSP1eYnpNTTIMzjYoCmJo1oiC1mx2jWlN4.jpg' />
             </div>

@@ -8,15 +8,16 @@ import Profile from './components/Profile/Profile'
 
 const app = () => {
     return (
-        <div className='app-wrapper'>
+        <div className='app-wrapper-content'>
             <Header />
             <Nav />
-            <Profile/> 
-            
-            {/* <Dialogs /> */}
-            
+            {/* <Profile/>  */}
+            <div className='app-wrapper-content'>
+                <Dialogs />
+            </div>
+
         </div>
-)
+    )
 }
 
 export default app;
