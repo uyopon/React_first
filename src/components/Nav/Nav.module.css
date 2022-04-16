@@ -1,32 +1,42 @@
 .nav{
     grid-area: n;
     background-color: rgb(123, 34, 201);
-    padding-left: 20px;
+    
    
     
   }
 .item{
   color:white;
-  margin-top: 30px;
+  /* margin-top: 20px; */
+
+  padding-top: 10px;
+  padding-left: 7px;
  
 }
  
-.elem{font: 900 30px 'Roboto';}
+a{font: 900 30px 'Roboto';}
 
-.elem:hover{
+a:hover{
   color: white;
-  padding-left:10px;
-  margin-top: 20px;
+  /* padding-left:7px; */
+  
 
-  transition-duration: 0.4s ;}
+  transition-duration: 0.2s ;}
 
-
-.elem:visited{
+a:visited{
 text-decoration: none;
 font: 900 30px 'Roboto';
 
+}
+
+.item:hover{
+  background-color: rgb(173, 90, 237);
+  transition-duration: 0.2s ;
+  color: white;
+  padding-left:15px;
 
 
+  
 }
 
  
