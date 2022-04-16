@@ -8,14 +8,14 @@ const MyPosts = () => {
         <div>
 
 
-            <div>
+            <div className={s.border}>
                 my posts
-                <div>
+                <div className={s.border}>
                     new posts
                 </div>
             </div>
 
-            <div className={s.posts}>
+            <div className={s.border}>
                 <Post message='Hi gays' LikesCount = '2'/>
                 <Post message='hello everybody' LikesCount = '0'/>
                 <Post message='my name is john' LikesCount = '1'/>

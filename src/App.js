@@ -9,9 +9,6 @@ import Music from './components/Music/Music';
 import News from './components/News/News'
 import Settings from './components/settings/settings'
 
-
-
-
 const app = () => {
     return (
 
