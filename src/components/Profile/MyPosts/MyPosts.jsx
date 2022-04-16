@@ -16,7 +16,7 @@ const MyPosts = () => {
             </div>
 
             <div >
-                <Post message='Hi gays' LikesCount = '2'/>
+                <Post message='Hi guys' LikesCount = '2'/>
                 <Post message='hello everybody' LikesCount = '0'/>
                 <Post message='my name is john' LikesCount = '1'/>
                 <Post message='I am  here' LikesCount = '8'/>
