@@ -1,42 +1,42 @@
 .nav{
     grid-area: n;
-    background-color: rgb(123, 34, 201);
-    
-   
-    
+    background-color: rgb(123, 34, 201); 
   }
+
+
 .item{
   color:white;
-  /* margin-top: 20px; */
-
-  padding-top: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   padding-left: 7px;
  
 }
+
  
 a{font: 900 30px 'Roboto';}
 
+/* a:visited{font: 900 30px 'Roboto';}
+NavLink:visited{font: 900 30px 'Roboto';}
+.elem:visited{font: 900 30px 'Roboto';} */
+
 a:hover{
-  color: white;
-  /* padding-left:7px; */
-  
-
-  transition-duration: 0.2s ;}
-
-a:visited{
-text-decoration: none;
-font: 900 30px 'Roboto';
-
+  color: white; 
+  transition-duration: 0.2s ;
+ 
 }
+
 
 .item:hover{
   background-color: rgb(173, 90, 237);
   transition-duration: 0.2s ;
   color: white;
-  padding-left:15px;
-
-
-  
+   
 }
 
+a:-webkit-any-link {
+  cursor: pointer;
+  text-decoration: none;
+  font: 900 30px 'Roboto';
+  font-family:'Roboto'
+}
  
