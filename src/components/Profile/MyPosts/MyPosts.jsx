@@ -10,12 +10,12 @@ const MyPosts = () => {
 
             <div className={s.border}>
                 my posts
-                <div className={s.border}>
+                <div >
                     new posts
                 </div>
             </div>
 
-            <div className={s.border}>
+            <div >
                 <Post message='Hi gays' LikesCount = '2'/>
                 <Post message='hello everybody' LikesCount = '0'/>
                 <Post message='my name is john' LikesCount = '1'/>

@@ -9,7 +9,7 @@
 
 }
 
-
+.app-wrapper-content{border: solid 2px white;}
 
 .app-wrapper{
   display:grid;
