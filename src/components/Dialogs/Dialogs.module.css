@@ -3,13 +3,15 @@
     grid-template-columns: 3fr 7fr;
 }
 
-.dialogs_items{}
+.dialogs_items{padding: 15px;}
 
 
 .item{}
 
 
-.messages{}
+.messages{padding: 15px;}
 
 
 .message{}
+
+.dialogs_items .active{color: gold;}

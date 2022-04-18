@@ -17,6 +17,7 @@ const Profile = () => {
             <div>
                 ava+descrtion
             </div>
+            <textarea name="Type" id="" cols="50" rows="5"></textarea>
 
             <MyPosts/>
 
