@@ -8,19 +8,19 @@ const Nav = () => {
         
         <nav className={s.nav}>
             <div className={s.item}>
-                <NavLink to  = '/Profile' сlassName={s.elem}>Profile</NavLink>
+                <NavLink to  = '/Profile' activeClassName={s.active}>Profile</NavLink>
             </div>
             <div className={s.item}>
-                <NavLink to = '/Dialogs' сlassName={s.elem}>Messages</NavLink>
+                <NavLink to = '/Dialogs' activeClassName={s.active}>Messages</NavLink>
             </div>
             <div className={s.item}>
-                <NavLink to = '/News' сlassName={s.elem}>News</NavLink>
+                <NavLink to = '/News' activeClassName={s.active}>News</NavLink>
             </div>
             <div className={s.item}> 
-                <NavLink to = '/Music' сlassName={s.elem}>Music</NavLink>
+                <NavLink to = '/Music' activeClassName={s.active}>Music</NavLink>
             </div>
             <div className={s.item}>
-                <NavLink to = '/Settings' сlassName={s.elem}>Settings</NavLink>
+                <NavLink to = '/Settings' activeClassName={s.active}>Settings</NavLink>
             </div>
         </nav>
     )

@@ -1,0 +1,15 @@
+.dialogs{
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+}
+
+.dialogs_items{}
+
+
+.item{}
+
+
+.messages{}
+
+
+.message{}

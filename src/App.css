@@ -8,8 +8,8 @@
   margin: 0 auto;
 
 }
-
-.app-wrapper-content{border: solid 2px white;}
+/* I ADDED GRID-AREA C */
+.app-wrapper-content{border: solid 2px white;grid-area: c;}
 
 .app-wrapper{
   display:grid;

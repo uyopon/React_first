@@ -5,7 +5,7 @@
 
 
 .item{
-  color:white;
+  /* color:white; */
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 7px;
@@ -13,14 +13,15 @@
 }
 
  
-a{font: 900 30px 'Roboto';}
+a{font: 900 30px 'Roboto';
+ color: rgb(67, 0, 108);}
 
 /* a:visited{font: 900 30px 'Roboto';}
 NavLink:visited{font: 900 30px 'Roboto';}
 .elem:visited{font: 900 30px 'Roboto';} */
 
 a:hover{
-  color: white; 
+  color: rgb(255, 255, 255);
   transition-duration: 0.2s ;
  
 }
@@ -29,14 +30,18 @@ a:hover{
 .item:hover{
   background-color: rgb(173, 90, 237);
   transition-duration: 0.2s ;
-  color: white;
+  /* color: white; */
    
 }
 
 a:-webkit-any-link {
+  
   cursor: pointer;
   text-decoration: none;
   font: 900 30px 'Roboto';
   font-family:'Roboto'
 }
- 
+
+a:active{color: white;}
+a.active{color: white;}
+
