@@ -3,7 +3,7 @@ import s from './ProfileInfo.module.css'
 
 const ProfileInfo = () => {
     return (
-        <div >
+        <div className={s.container}>
             <div >
                 <img src='https://assets.weforum.org/article/image/large_oJiIJtxAsQSP1eYnpNTTIMzjYoCmJo1oiC1mx2jWlN4.jpg' />
             </div>
