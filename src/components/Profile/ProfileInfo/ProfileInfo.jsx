@@ -1,14 +1,9 @@
 import React from 'react';
-import MyPosts from './MyPosts/MyPosts';
-import s from 'ProfileIlnfo.module.css'
-import ProfileInfo from './ProfileInfo/ProfileInfo'
+import s from './ProfileInfo.module.css'
 
-
-const Profile = () => {
+const ProfileInfo = () => {
     return (
-
         <div >
-            <ProfileInfo/>
             <div >
                 <img src='https://assets.weforum.org/article/image/large_oJiIJtxAsQSP1eYnpNTTIMzjYoCmJo1oiC1mx2jWlN4.jpg' />
             </div>
@@ -20,11 +15,9 @@ const Profile = () => {
             <div>
                 ava+descrtion
             </div>
+
             <textarea name="Type" id="" cols="50" rows="5"></textarea>
-
-            <MyPosts/>
-
         </div>
     )
 }
-export default Profile;
+export default ProfileInfo;
