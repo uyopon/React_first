@@ -10,7 +10,7 @@ const MyPosts = () => {
         {id:3,message:'my name is john',LikesCount:1},
         {id:4,message:'I am  here',LikesCount:8},
     ]
-
+    let postsElements = PostData.map(p =>     <Post message={p.message} id={p.id} LikesCount = {p.LikesCount}/>              )
 
     return (
 
@@ -24,10 +24,11 @@ const MyPosts = () => {
             </div>
 
             <div >
-                <Post message={PostData[0].message} id={PostData[0].id} LikesCount = {PostData[0].LikesCount}/>
+               {postsElements}
+                {/* <Post message={PostData[0].message} id={PostData[0].id} LikesCount = {PostData[0].LikesCount}/>
                 <Post message={PostData[1].message} id={PostData[1].id} LikesCount = {PostData[1].LikesCount}/>
                 <Post message ={PostData[2].message} id={PostData[2].id} LikesCount = {PostData[2].LikesCount}/>
-                <Post message = {PostData[3].message} id={PostData[3].id} LikesCount = {PostData[3].LikesCount}/>
+                <Post message = {PostData[3].message} id={PostData[3].id} LikesCount = {PostData[3].LikesCount}/> */}
             </div>
         </div>
     )
