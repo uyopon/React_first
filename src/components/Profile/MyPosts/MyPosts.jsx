@@ -7,8 +7,10 @@ const MyPosts = (props) => {
     // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!NOT DISPLAYED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
     let postsElements = props.Posts.map(p => <Post message={p.message} id={p.id} LikesCount={p.LikesCount} />)
+  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!NOT DISPLAYED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
     return (
+
 
         <div className={s.padding}>
 
