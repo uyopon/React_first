@@ -27,20 +27,6 @@ const app = (props) => {
                     <Route path='Settings/' element={<Settings />} /> 
 
 
-                    {/* <Route path='/' element={<Profile />} /> 
-                    <Route path='/dialogs' element={<Dialogs />} />
-                    <Route path='/profile' element={<Profile />} />
-                    <Route path='/Music' element={<Music />} />
-                    <Route path='/News' element={<News />} />
-                    <Route path='/Settings' element={<Settings />} />  */}
-
-
-              {/* <Route path='dialogs/*' element={<DialogsContainer />} />
-              <Route path='profile/' element={<Profile />} />
-              <Route path='feed/' element={<NewsFeed />} />
-              <Route path='music/' element={<Music />} />
-              <Route path='settings/' element={<Settings />} />
-              <Route path='users/' element={<UsersContainer />} /> */}
                 </Routes> 
                
 

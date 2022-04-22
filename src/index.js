@@ -6,8 +6,6 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom'
 
 
-
-
 let Posts =[
   {id:1,message:'Hi guys',LikesCount:2},
   {id:2,message:'hello everybody',LikesCount:0},

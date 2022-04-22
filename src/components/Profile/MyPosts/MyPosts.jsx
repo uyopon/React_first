@@ -6,8 +6,8 @@ const MyPosts = (props) => {
 
     // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!NOT DISPLAYED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-    let postsElements = props.Posts.map(p => <Post message={p.message} id={p.id} LikesCount={p.LikesCount} />)
-  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!NOT DISPLAYED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!OK NOW 
+    
+    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!NOT DISPLAYED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!OK NOW 
 
     return (
 
@@ -22,7 +22,8 @@ const MyPosts = (props) => {
             </div>
 
             <div >
-                {postsElements}
+               
+                333333333333333333333333333333333
                 {/* <Post message={PostData[0].message} id={PostData[0].id} LikesCount = {PostData[0].LikesCount}/>
                 <Post message={PostData[1].message} id={PostData[1].id} LikesCount = {PostData[1].LikesCount}/>
                 <Post message ={PostData[2].message} id={PostData[2].id} LikesCount = {PostData[2].LikesCount}/>
