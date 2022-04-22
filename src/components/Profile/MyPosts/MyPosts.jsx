@@ -7,7 +7,7 @@ const MyPosts = (props) => {
     // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!NOT DISPLAYED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
     let postsElements = props.Posts.map(p => <Post message={p.message} id={p.id} LikesCount={p.LikesCount} />)
-  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!NOT DISPLAYED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!NOT DISPLAYED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!OK NOW 
 
     return (
 
@@ -32,3 +32,4 @@ const MyPosts = (props) => {
     )
 }
 export default MyPosts;
+
