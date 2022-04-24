@@ -10,6 +10,11 @@ import News from './components/News/News'
 import Settings from './components/settings/settings'
 
 const app = (props) => {
+    let Posts =[
+        {id:1,message:'Hi guys',LikesCount:2},
+        {id:2,message:'hello everybody',LikesCount:0},
+        {id:3,message:'my name is john',LikesCount:1},
+        {id:4,message:'I am  here',LikesCount:8}]
 
     return (
 
@@ -22,7 +27,7 @@ const app = (props) => {
 
                     <Route path='/' element={<Profile />} /> 
                     <Route path='dialogs/*' element={<Dialogs Dialogs ={props.Dialogs} Messages ={props.Messages }  />} />
-                    <Route path='profile/' element={<Profile />} />
+                    <Route path='profile/' element={<Profile Posts = {Posts}/>} />
                     <Route path='Music/' element={<Music />} />
                     <Route path='News/' element={<News />} />
                     <Route path='Settings/' element={<Settings />} /> 
