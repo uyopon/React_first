@@ -23,7 +23,7 @@
 
 
 
-let state = {
+let State = {
     Posts: [{id:1,message:'Hi guys',LikesCount:2},
     {id:2,message:'hello everybody',LikesCount:0},
     {id:3,message:'my name is john',LikesCount:1},
@@ -43,6 +43,6 @@ let state = {
         { id: 3, message: 'yo' },
         { id: 4, message: 'hi' },
         { id: 5, message: 'hi Viktor' },]}
-        
-export default state
+
+export default State
 

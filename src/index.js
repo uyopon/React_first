@@ -10,11 +10,13 @@ import State from './redux/state'
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App State= {State}/>
-    </BrowserRouter>
+    <App
+      posts={State.State.Posts}
+      dialogs={State.State.Dialogs}
+      messages={State.State.Messages}
+    />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
