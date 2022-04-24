@@ -6,11 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom'
 
 
-let Posts =[
-  {id:1,message:'Hi guys',LikesCount:2},
-  {id:2,message:'hello everybody',LikesCount:0},
-  {id:3,message:'my name is john',LikesCount:1},
-  {id:4,message:'I am  here',LikesCount:8}]
+
 
   let Dialogs = [
     { id: 1, name: 'Dima' },
@@ -30,7 +26,7 @@ let Messages = [
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App Posts = {Posts} Dialogs = {Dialogs} Messages={Messages}/>
+      <App Dialogs = {Dialogs} Messages={Messages}/>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
