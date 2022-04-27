@@ -2,6 +2,16 @@ import React from 'react';
 import s from './ProfileInfo.module.css'
 
 const ProfileInfo = () => {
+
+
+    
+    // let newPostElement =React.createRef();
+
+    // let addPost=()=>{
+    //     let text = newPostElement.current.value;
+    //     alert(text)
+    // }
+
     return (
         <div className={s.container}>
             <div >
@@ -15,8 +25,14 @@ const ProfileInfo = () => {
             <div className={s.margin_left}>
                 ava+descrtion
             </div>
+            
 
-            <textarea  name="Type" id="" cols="50" rows="5" className={s.margin_left}></textarea>
+            {/* <textarea  name="Type" id="" cols="50" rows="5" className={s.margin_left} ref={newPostElement} ></textarea>
+
+
+            <div className={s.margin_left } >
+                <button onClick={addPost}>add post</button>
+            </div> */}
         </div>
     )
 }
