@@ -14,6 +14,7 @@ const Post = (props) => {
             
             {props.message}
             {props.id}
+            
 
             <div>
                 <span>like </span>{props.LikesCount}
