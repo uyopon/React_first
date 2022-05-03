@@ -16,7 +16,7 @@ const Profile = (props) => {
 
             <MyPosts Posts = {props.Posts} />
 
-            {/* <MyPosts Posts = {props.Posts} /> */}
+
 
                 
         </div>
