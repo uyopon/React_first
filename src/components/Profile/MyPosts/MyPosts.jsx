@@ -16,7 +16,7 @@ const MyPosts = (props) => {
 
     let addPost=()=>{
         let text = newPostElement.current.value;
-        alert(text)
+        props.addPos(text)
     }
 
 // let postsElements = props.Posts.map(  d =>  <Post id={d.id} message={d.message} LikesCount={d.LikesCount} />  )

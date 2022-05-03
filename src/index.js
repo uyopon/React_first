@@ -6,7 +6,9 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import state from './redux/state';
 import {addPost} from './redux/state'
-addPost()
+
+
+
 
 
 
@@ -17,7 +19,9 @@ ReactDOM.render(
     <App
       Posts={state.profilePage.Posts}
       Dialogs={state.dialogsPage.Dialogs}
-      Messages={state.dialogsPage.Messages}/>
+      Messages={state.dialogsPage.Messages}
+      addPost ={addPost}     
+      />
     </BrowserRouter >
   </React.StrictMode>,
  
