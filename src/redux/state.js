@@ -1,3 +1,4 @@
+import { rerenderEntireTree } from "../render";
 
 let state = {
 
@@ -35,6 +36,7 @@ export let addPost = (postMessage) => {
     };
 
     state.profilePage.Posts.push(newPost)
+    rerenderEntireTree(state) //STATE -ВЫЗЫВАЕМ ОТРИСОВЫВАЮЩУЮ ФУНКЦИЮ И ПЕРЕДАЕМ ЕЙ СЕ ДАННЫЕ
 }
 
 
