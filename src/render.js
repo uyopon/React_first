@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-import { addpost } from './redux/state'
+import { addpost, updateNewPostText } from './redux/state'
 
 
 
@@ -16,10 +16,12 @@ export let rerenderEntireTree = (props) => {
     <React.StrictMode>
       <BrowserRouter>
         <App
+          newPostsText = {props.profilePage.newPostsText}
           Posts={props.profilePage.Posts}
           Dialogs={props.dialogsPage.Dialogs}
           Messages={props.dialogsPage.Messages}
-          addpost={addpost} />
+          addpost={addpost}
+          updateNewPostText = {updateNewPostText} />
       </BrowserRouter >
     </React.StrictMode>,
 
