@@ -4,40 +4,28 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-// import state from './redux/state';
-import {addPost} from './redux/state'
-
-
-//ЭТОЙ ФАЙЛ НУЖЕН ТОЛЬКО ДЛЯ ТОГО ЧТОБЫ СОДЕРЖАТЬ ФУНКЦИЮ rerenderEntireTree КОТОРАЯ ОТРИСОВЫВАЕТ DOM TREE,
-//ФУНКЦИЯ ПРИНИМАЕТ АРГУМЕНТ state (БЕЗ PROPS???)-
-//STATE = ОБЪЕКТ КОТОРЫЙ ХРАНИТ В СЕБЕ ВСЕ ДАННЫЕ
+import { addpost } from './redux/state'
 
 
 
+export let rerenderEntireTree = (props) => {
+  console.log(props) // PROPS IS APPEAR =)
 
 
+  ReactDOM.render(
+    <React.StrictMode>
+      <BrowserRouter>
+        <App
+          Posts={props.profilePage.Posts}
+          Dialogs={props.dialogsPage.Dialogs}
+          Messages={props.dialogsPage.Messages}
+          addpost={addpost} />
+      </BrowserRouter >
+    </React.StrictMode>,
 
-
-export let rerenderEntireTree = (state) =>{
-
-
-
-ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-    <App
-      Posts={state.profilePage.Posts}
-      Dialogs={state.dialogsPage.Dialogs}
-      Messages={state.dialogsPage.Messages}
-      addPost ={addPost}     
-      />
-    </BrowserRouter >
-  </React.StrictMode>,
- 
-  document.getElementById("root")
-);
+    document.getElementById("root")
+  );
 }
-
 
 
 

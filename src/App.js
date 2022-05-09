@@ -10,19 +10,21 @@ import News from './components/News/News'
 import Settings from './components/settings/settings'
 
 const app = (props) => {
+    
     return (
         <div className='app-wrapper'>
             <Header />
             <Nav />
             <div className='app-wrapper-content'>
                 <Routes>
-                    <Route path='/' element={<Profile Posts = {props.Posts}/>} addPost = {props.addPost}/> 
+                    <Route path='/' element={<Profile Posts = {props.Posts}/>} addpost = {props.addpost}/> 
                     <Route path='dialogs/*' element={<Dialogs Dialogs ={props.Dialogs}
                      Messages ={props.Messages }  />} />
-                    <Route path='profile/' element={<Profile Posts = {props.Posts}/>}addPost = {props.addPost} />
+                    <Route path='profile/' element={<Profile Posts = {props.Posts}/>}addpost = {props.addpost} />
                     <Route path='Music/' element={<Music />} />
                     <Route path='News/' element={<News />} />
-                    <Route path='Settings/' element={<Settings />} />                    
+                    <Route path='Settings/' element={<Settings />} />      
+                                 
                 </Routes> 
                
             </div>
@@ -50,12 +52,6 @@ export default app;
                
 //             </div>
 //         </div>
-//     )
+//     )ё
 // }
 
-{/* <Route path='/' element={<Profile Posts = {props.Posts}/>} /> 
-<Route path='dialogs/*' element={<Dialogs Dialogs ={props.Dialogs} Messages ={props.Messages }  />} />
-<Route path='profile/' element={<Profile Posts = {props.Posts}/>} />
-<Route path='Music/' element={<Music />} />
-<Route path='News/' element={<News />} />
-<Route path='Settings/' element={<Settings />} />   */}

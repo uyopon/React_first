@@ -14,7 +14,7 @@ const Profile = (props) => {
             <ProfileInfo/>
 
 
-            <MyPosts Posts = {props.Posts} addPost = {props.addPost}/>
+            <MyPosts Posts = {props.Posts} addpost = {props.addpost}/>
 
 
 

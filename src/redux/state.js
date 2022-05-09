@@ -9,7 +9,6 @@ let state = {
         { id: 4, message: 'I am  here', LikesCount: 8 }],
     },
 
-
     dialogsPage: {
         Dialogs: [
             { id: 1, name: 'Dima' },
@@ -28,7 +27,8 @@ let state = {
     },
 }
 
-export let addPost = (postMessage) => {
+
+export let addpost = (postMessage) => { //функция addpost принимает тект from text area и пушит его в объект state где хранятся все данные
     let newPost = {
         id: 5,
         message: postMessage,
@@ -36,54 +36,11 @@ export let addPost = (postMessage) => {
     };
 
     state.profilePage.Posts.push(newPost)
-    rerenderEntireTree(state) //STATE -ВЫЗЫВАЕМ ОТРИСОВЫВАЮЩУЮ ФУНКЦИЮ И ПЕРЕДАЕМ ЕЙ СЕ ДАННЫЕ
+    rerenderEntireTree(state) 
 }
 
 
 
 
-
-//  Posts: [{id:1,message:'Hi guys',LikesCount:2},
-//  {id:2,message:'hello everybody',LikesCount:0},
-//  {id:3,message:'my name is john',LikesCount:1},
-//  {id:4,message:'I am  here',LikesCount:8}],
-
-//  Dialogs: [
-//      { id: 1, name: 'Dima' },
-//      { id: 2, name: 'Andrey' },
-//      { id: 3, name: 'Sveta' },
-//      { id: 4, name: 'Sasha' },
-//      { id: 5, name: 'Viktor' },
-//      { id: 6, name: 'Valera' },],
-
-//  Messages: [
-//      { id: 1, message: 'hi' },
-//      { id: 2, message: 'how are you' },
-//      { id: 3, message: 'yo' },
-//      { id: 4, message: 'hi' },
-//      { id: 5, message: 'hi Viktor' },],
-//  }
-
 export default state
 
-// let state = {
-//     Posts: [{id:1,message:'Hi guys',LikesCount:2},
-//     {id:2,message:'hello everybody',LikesCount:0},
-//     {id:3,message:'my name is john',LikesCount:1},
-//     {id:4,message:'I am  here',LikesCount:8}],
-
-//     Dialogs: [
-//         { id: 1, name: 'Dima' },
-//         { id: 2, name: 'Andrey' },
-//         { id: 3, name: 'Sveta' },
-//         { id: 4, name: 'Sasha' },
-//         { id: 5, name: 'Viktor' },
-//         { id: 6, name: 'Valera' },],
-
-//     Messages: [
-//         { id: 1, message: 'hi' },
-//         { id: 2, message: 'how are you' },
-//         { id: 3, message: 'yo' },
-//         { id: 4, message: 'hi' },
-//         { id: 5, message: 'hi Viktor' },],
-//     }
