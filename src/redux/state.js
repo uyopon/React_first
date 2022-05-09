@@ -6,7 +6,7 @@ let state = {
         { id: 2, message: 'hello everybody', LikesCount: 0 },
         { id: 3, message: 'my name is john', LikesCount: 1 },
         { id: 4, message: 'I am  here', LikesCount: 8 }],
-        newPostsText : ''
+    newPostsText : ''
     },
     dialogsPage: {
         Dialogs: [
@@ -25,12 +25,13 @@ let state = {
             { id: 5, message: 'hi Viktor' },],
     },
 }
-export let addpost = (postMessage) => { //функция addpost принимает тект from text area и пушит его в объект state где хранятся все данные
+export let addpost = () => { //функция addpost принимает тект from text area и пушит его в объект state где хранятся все данные
     let newPost = {
         id: 5,
-        message: postMessage,
+        message: state.profilePage.newPostsText,
         LikesCount: 5};
     state.profilePage.Posts.push(newPost)
+    state.profilePage.newPostsText = ''
     rerenderEntireTree(state) 
 }
 export let updateNewPostText = (newText) => { //функция addpost принимает тект from text area и пушит его в объект state где хранятся все данные
