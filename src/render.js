@@ -9,7 +9,7 @@ import { addpost } from './redux/state'
 
 
 export let rerenderEntireTree = (props) => {
-  console.log(props) // PROPS IS APPEAR =)
+  
 
 
   ReactDOM.render(
