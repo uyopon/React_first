@@ -1,4 +1,6 @@
-import { rerenderEntireTree } from "../render";
+let rerenderEntireTree = () =>{
+
+}
 
 let state = {
     profilePage: {
@@ -22,22 +24,25 @@ let state = {
             { id: 2, message: 'how are you' },
             { id: 3, message: 'yo' },
             { id: 4, message: 'hi' },
-            { id: 5, message: 'hi Viktor' },],
-    },
-}
-export let addpost = () => { //функция addpost принимает тект from text area и пушит его в объект state где хранятся все данные
+            { id: 5, message: 'hi Viktor' },],},}
+
+export const addpost = () => { //функция addpost принимает тект from text area и пушит его в объект state где хранятся все данные
     let newPost = {
         id: 5,
         message: state.profilePage.newPostsText,
         LikesCount: 5};
     state.profilePage.Posts.push(newPost)
     state.profilePage.newPostsText = ''
-    rerenderEntireTree(state) 
-}
-export let updateNewPostText = (newText) => { //функция addpost принимает тект from text area и пушит его в объект state где хранятся все данные
+    rerenderEntireTree(state) }
+
+export const updateNewPostText = (newText) => { //функция addpost принимает тект from text area и пушит его в объект state где хранятся все данные
     state.profilePage.newPostsText = newText
-    rerenderEntireTree(state) 
+    rerenderEntireTree(state) }
+
+export const subscribe = (callback) => {
+    rerenderEntireTree = callback ///НАБЛЮДАТЕЛЬ (ПАТТЕРН)-СПРОСЯТ НА СОБЕСЕДОВАНИИ
 }
+
 
 export default state
 
