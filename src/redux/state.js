@@ -1,6 +1,5 @@
-let rerenderEntireTree = () =>{
-
-}
+let rerenderEntireTree = 228  //КАК Я ПОНЯЛ- В ЭТУ ПЕРЕМЕНЕННУЮ МЫ ПЕРЕПРИСВАИВАЕМ НОВОЕ ЗНАЧЕНИЕ (ЭТИМ НАНИМАЕТСЯ F subscribe) ОНА В ПЕРЕМЕННУЮ
+//rerenderEntireTree ПРИСВАЕИВАЕТ НООВЕ ЗНАЧЕНИЕ  - ФУНКЦИИ RERENDER DOM TREE КОТОРУЮ ОНА ПОЛУЧАЕТ В КАЧЕСТВЕ АРГЕМЕНТА
 
 let state = {
     profilePage: {
@@ -39,8 +38,8 @@ export const updateNewPostText = (newText) => { //функция addpost при�
     state.profilePage.newPostsText = newText
     rerenderEntireTree(state) }
 
-export const subscribe = (callback) => {
-    rerenderEntireTree = callback ///НАБЛЮДАТЕЛЬ (ПАТТЕРН)-СПРОСЯТ НА СОБЕСЕДОВАНИИ
+export const subscribe = (observer) => {
+    rerenderEntireTree = observer ///НАБЛЮДАТЕЛЬ (ПАТТЕРН)-СПРОСЯТ НА СОБЕСЕДОВАНИИ
 }
 
 
