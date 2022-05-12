@@ -1,11 +1,11 @@
 import reportWebVitals from './reportWebVitals';
-import state, { subscribe } from './redux/state';
+import store from './redux/state';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-import { addpost, updateNewPostText } from './redux/state'
+
 
 
 let rerenderEntireTree = (state) => { //функция которую вызывают для rerender (переотрисовки и передают ей актуальный state)
@@ -14,12 +14,12 @@ let rerenderEntireTree = (state) => { //функция которую вызыв
     <React.StrictMode>
       <BrowserRouter>
         <App
-          newPostsText = {state.profilePage.newPostsText}  //newPostsText : ''
-          Posts={state.profilePage.Posts}  //POSTS = ПОСТЫ В STATE ПЕРЕДАННЫЕ В Ф ВО ВРЕМЯ ВЫЗОВА
-          Dialogs={state.dialogsPage.Dialogs}
-          Messages={state.dialogsPage.Messages}
-          addpost={addpost}
-          updateNewPostText = {updateNewPostText} />
+          newPostsText = {store.getstate().profilePage.newPostsText}  //newPostsText : ''
+          Posts={store.getstate().profilePage.Posts}  //POSTS = ПОСТЫ В STATE ПЕРЕДАННЫЕ В Ф ВО ВРЕМЯ ВЫЗОВА
+          Dialogs={store.getstate().dialogsPage.Dialogs}
+          Messages={store.getstate().dialogsPage.Messages}
+          addpost={store.addpost}
+          updateNewPostText = {store.updateNewPostText} />
       </BrowserRouter >
     </React.StrictMode>,
 
@@ -29,9 +29,9 @@ let rerenderEntireTree = (state) => { //функция которую вызыв
 
 
 
-rerenderEntireTree(state)
+rerenderEntireTree(store.getstate())
 
-subscribe(rerenderEntireTree)
+store.subscribe(rerenderEntireTree)
 
 
 

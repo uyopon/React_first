@@ -1,47 +1,54 @@
-let rerenderEntireTree = 228  //КАК Я ПОНЯЛ- В ЭТУ ПЕРЕМЕНЕННУЮ МЫ ПЕРЕПРИСВАИВАЕМ НОВОЕ ЗНАЧЕНИЕ (ЭТИМ НАНИМАЕТСЯ F subscribe) ОНА В ПЕРЕМЕННУЮ
-//rerenderEntireTree ПРИСВАЕИВАЕТ НООВЕ ЗНАЧЕНИЕ  - ФУНКЦИИ RERENDER DOM TREE КОТОРУЮ ОНА ПОЛУЧАЕТ В КАЧЕСТВЕ АРГЕМЕНТА
+let store = {
+    _state :{
+        profilePage: {
+            Posts: [{ id: 1, message: 'Hi guys', LikesCount: 2 },
+            { id: 2, message: 'hello everybody', LikesCount: 0 },
+            { id: 3, message: 'my name is john', LikesCount: 1 },
+            { id: 4, message: 'I am  here', LikesCount: 8 }],
+        newPostsText : ''
+        },
+        dialogsPage: {
+            Dialogs: [
+                { id: 1, name: 'Dima' },
+                { id: 2, name: 'Andrey' },
+                { id: 3, name: 'Sveta' },
+                { id: 4, name: 'Sasha' },
+                { id: 5, name: 'Viktor' },
+                { id: 6, name: 'Valera' },],
+    
+            Messages: [
+                { id: 1, message: 'hi' },
+                { id: 2, message: 'how are you' },
+                { id: 3, message: 'yo' },
+                { id: 4, message: 'hi' },
+                { id: 5, message: 'hi Viktor' },],
+            },},
 
-let state = {
-    profilePage: {
-        Posts: [{ id: 1, message: 'Hi guys', LikesCount: 2 },
-        { id: 2, message: 'hello everybody', LikesCount: 0 },
-        { id: 3, message: 'my name is john', LikesCount: 1 },
-        { id: 4, message: 'I am  here', LikesCount: 8 }],
-    newPostsText : ''
+    getstate(){
+        return this._state    //THIS
     },
-    dialogsPage: {
-        Dialogs: [
-            { id: 1, name: 'Dima' },
-            { id: 2, name: 'Andrey' },
-            { id: 3, name: 'Sveta' },
-            { id: 4, name: 'Sasha' },
-            { id: 5, name: 'Viktor' },
-            { id: 6, name: 'Valera' },],
+    
+    _callSubscriber : 228,
 
-        Messages: [
-            { id: 1, message: 'hi' },
-            { id: 2, message: 'how are you' },
-            { id: 3, message: 'yo' },
-            { id: 4, message: 'hi' },
-            { id: 5, message: 'hi Viktor' },],},}
+    addpost  () { 
+        let newPost = {
+            id: 5,
+            message: this._state.profilePage.newPostsText,
+            LikesCount: 5};
+        this._state.profilePage.Posts.push(newPost)
+        this._state.profilePage.newPostsText = ''
+        this._callSubscriber(this._state) },
 
-export const addpost = () => { //функция addpost принимает тект from text area и пушит его в объект state где хранятся все данные
-    let newPost = {
-        id: 5,
-        message: state.profilePage.newPostsText,
-        LikesCount: 5};
-    state.profilePage.Posts.push(newPost)
-    state.profilePage.newPostsText = ''
-    rerenderEntireTree(state) }
+    updateNewPostText (newText) { 
+        this._state.profilePage.newPostsText = newText
+        this._callSubscriber(this._state) },
 
-export const updateNewPostText = (newText) => { //функция addpost принимает тект from text area и пушит его в объект state где хранятся все данные
-    state.profilePage.newPostsText = newText
-    rerenderEntireTree(state) }
-
-export const subscribe = (observer) => {
-    rerenderEntireTree = observer ///НАБЛЮДАТЕЛЬ (ПАТТЕРН)-СПРОСЯТ НА СОБЕСЕДОВАНИИ
+    subscribe (observer) {
+        this._callSubscribere = observer ///НАБЛЮДАТЕЛЬ (ПАТТЕРН)-СПРОСЯТ НА СОБЕСЕДОВАНИИ
+    }
 }
 
 
-export default state
+export default store
+
 
