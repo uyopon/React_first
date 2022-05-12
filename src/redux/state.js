@@ -15,7 +15,6 @@ let store = {
                 { id: 4, name: 'Sasha' },
                 { id: 5, name: 'Viktor' },
                 { id: 6, name: 'Valera' },],
-    
             Messages: [
                 { id: 1, message: 'hi' },
                 { id: 2, message: 'how are you' },
@@ -27,9 +26,7 @@ let store = {
     getstate(){
         return this._state    //THIS
     },
-    
-    _callSubscriber : 228,
-
+    _callSubscriber(){},
     addpost  () { 
         let newPost = {
             id: 5,
@@ -44,10 +41,9 @@ let store = {
         this._callSubscriber(this._state) },
 
     subscribe (observer) {
-        this._callSubscribere = observer ///НАБЛЮДАТЕЛЬ (ПАТТЕРН)-СПРОСЯТ НА СОБЕСЕДОВАНИИ
-    }
+        this._callSubscriber = observer ///НАБЛЮДАТЕЛЬ (ПАТТЕРН)-СПРОСЯТ НА СОБЕСЕДОВАНИИ
+    },
 }
-
 
 export default store
 
