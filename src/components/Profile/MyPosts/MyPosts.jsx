@@ -1,26 +1,28 @@
 import React from 'react';
+import { addPostActionCreator, updateNewPostTextActionCretor } from '../../../redux/state';
 import s from './MyPosts.module.css'
 import Post from './Post/Post'
 
+
+
 const MyPosts = (props) => {
-
-
-
-
 
     let postsElements = props.Posts.map(d => <Post id={d.id} message={d.message} LikesCount={d.LikesCount} />)
     
     let newPostElement =React.createRef();
 
     let addPost=()=>{
-        props.dispatch({type: 'ADD-POST'})}
+        let action = addPostActionCreator()
+        props.dispatch(action)}
 
     let onPostChange = () => {
         let text = newPostElement.current.value;
-        props.dispatch({type: 'UPDATE-NEW-POST-TEXT', newText:text })}
+        let action = updateNewPostTextActionCretor(text)
+        props.dispatch(action)}
 
     return (
         <div className={s.padding}>
+
             <textarea name="Type" id="" cols="50" rows="5" 
             className={s.margin_left} 
             ref={newPostElement} 

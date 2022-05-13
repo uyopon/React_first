@@ -25,18 +25,12 @@ let store = {
     },
     _callSubscriber() { },
 
-
-
     getstate() {
         return this._state    //THIS
     },
     subscribe(observer) {
         this._callSubscriber = observer ///НАБЛЮДАТЕЛЬ (ПАТТЕРН)-СПРОСЯТ НА СОБЕСЕДОВАНИИ
     },
-
-
-
-
 
     dispatch(action) {
         if (action.type === 'ADD-POST') {
@@ -52,17 +46,22 @@ let store = {
         else if(action.type === 'UPDATE-NEW-POST-TEXT'){
             this._state.profilePage.newPostsText = action.newText
             this._callSubscriber(this._state)
-
         }
-
     },
-
-
-
-
+}
+export const addPostActionCreator = () => {
+    return(
+       { type: 'ADD-POST' }
+    )
 
 }
 
+ export const updateNewPostTextActionCretor = (text) => {
+    return(
+        {type: 'UPDATE-NEW-POST-TEXT', newText:text }
+    )
+
+}
 
 
 
