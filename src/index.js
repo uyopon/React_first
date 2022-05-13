@@ -18,8 +18,8 @@ let rerenderEntireTree = (state) => { //функция которую вызыв
           Posts={state.profilePage.Posts}  //POSTS = ПОСТЫ В STATE ПЕРЕДАННЫЕ В Ф ВО ВРЕМЯ ВЫЗОВА
           Dialogs={state.dialogsPage.Dialogs}
           Messages={state.dialogsPage.Messages}
-          addpost={store.addpost.bind(store)}
-          updateNewPostText = {store.updateNewPostText.bind(store)} />
+          dispatch={store.dispatch.bind(store)}
+/>
       </BrowserRouter >
     </React.StrictMode>,
 

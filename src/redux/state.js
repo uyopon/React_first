@@ -1,11 +1,11 @@
 let store = {
-    _state :{
+    _state: {
         profilePage: {
             Posts: [{ id: 1, message: 'Hi guys', LikesCount: 2 },
             { id: 2, message: 'hello everybody', LikesCount: 0 },
             { id: 3, message: 'my name is john', LikesCount: 1 },
             { id: 4, message: 'I am  here', LikesCount: 8 }],
-        newPostsText : ''
+            newPostsText: ''
         },
         dialogsPage: {
             Dialogs: [
@@ -21,29 +21,50 @@ let store = {
                 { id: 3, message: 'yo' },
                 { id: 4, message: 'hi' },
                 { id: 5, message: 'hi Viktor' },],
-            },},
+        },
+    },
+    _callSubscriber() { },
 
-    getstate(){
+
+
+    getstate() {
         return this._state    //THIS
     },
-    _callSubscriber(){},
-    addpost  () { 
-        let newPost = {
-            id: 5,
-            message: this._state.profilePage.newPostsText,
-            LikesCount: 5};
-        this._state.profilePage.Posts.push(newPost)
-        this._state.profilePage.newPostsText = ''
-        this._callSubscriber(this._state) },
-
-    updateNewPostText (newText) { 
-        this._state.profilePage.newPostsText = newText
-        this._callSubscriber(this._state) },
-
-    subscribe (observer) {
+    subscribe(observer) {
         this._callSubscriber = observer ///НАБЛЮДАТЕЛЬ (ПАТТЕРН)-СПРОСЯТ НА СОБЕСЕДОВАНИИ
     },
+
+
+
+
+
+    dispatch(action) {
+        if (action.type === 'ADD-POST') {
+            let newPost = {
+                id: 5,
+                message: this._state.profilePage.newPostsText,
+                LikesCount: 5
+            };
+            this._state.profilePage.Posts.push(newPost)
+            this._state.profilePage.newPostsText = ''
+            this._callSubscriber(this._state)
+        }
+        else if(action.type === 'UPDATE-NEW-POST-TEXT'){
+            this._state.profilePage.newPostsText = action.newText
+            this._callSubscriber(this._state)
+
+        }
+
+    },
+
+
+
+
+
 }
+
+
+
 
 export default store
 
