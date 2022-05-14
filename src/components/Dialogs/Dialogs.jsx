@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom';
 import s from './Dialogs.module.css'
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
+import updateNewMessageTextActionCretor from '../../redux/state'
+import addMessgeActionCreator from '../../redux/state'
 
 const Dialogs = (props) => {
     let newMessageElement = React.createRef();
@@ -14,10 +16,12 @@ const Dialogs = (props) => {
     let messagesElement = props.Messages.map(m => <Message message={m.message} id={m.id} />)
     
     // let newMessageBody = props.state.newMessageBody // ПУСТОЙ ЭКРАН СМЕРТИ
-    let onsendmessageclick = () => {}
+    let onsendmessageclick = () => {
+        props.store.sispatch(addMessgeActionCreator())
+    }
     let onNewMessageChange = (e) => {
         let body = e.target.value
-        props.store.sispatch()
+        props.store.sispatch(updateNewMessageTextActionCretor(body))
     }
     return (
         <div className={s.dialogs}>
