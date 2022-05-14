@@ -10,7 +10,6 @@ import News from './components/News/News'
 import Settings from './components/settings/settings'
 
 const app = (props) => {
-    
     return (
         <div className='app-wrapper'>
             <Header />
@@ -20,41 +19,17 @@ const app = (props) => {
                     <Route path='/' element={<Profile Posts = {props.Posts} dispatch = {props.dispatch}
                      newPostsText={props.newPostsText} />} /> 
 
-                    <Route path='dialogs/*' element={<Dialogs Dialogs ={props.Dialogs} Messages ={props.Messages }  />} />
+                    <Route path='dialogs/*' element={<Dialogs Dialogs ={props.Dialogs} Messages ={props.Messages } dispatch = {props.dispatch} store = {props.store} />} />
                     <Route path='profile/' element={<Profile Posts = {props.Posts} dispatch = {props.dispatch}
                      newPostsText={props.newPostsText} />}  />
                      
                     <Route path='Music/' element={<Music />} />
                     <Route path='News/' element={<News />} />
-                    <Route path='Settings/' element={<Settings />} />      
-                                 
+                    <Route path='Settings/' element={<Settings />} />                 
                 </Routes> 
-               
             </div>
         </div>
     )
 }
-
 export default app;
-
-// const app = (props) => {
-//     return (
-//         <div className='app-wrapper'>
-//             <Header />
-//             <Nav />
-//             <div className='app-wrapper-content'>
-//                 <Routes>
-//                     <Route path='/' element={<Profile Posts = {props.state.ProfilePage.Posts}/>} /> 
-//                     <Route path='dialogs/*' element={<Dialogs Dialogs ={props.state.ProfilePage.Dialogs}
-//                      Messages ={props.state.ProfilePage.Messages }  />} />
-//                     <Route path='profile/' element={<Profile Posts = {props.state.ProfilePage.Posts}/>} />
-//                     <Route path='Music/' element={<Music />} />
-//                     <Route path='News/' element={<News />} />
-//                     <Route path='Settings/' element={<Settings />} />                    
-//                 </Routes> 
-               
-//             </div>
-//         </div>
-//     )ё
-// }
 

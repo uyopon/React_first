@@ -19,6 +19,7 @@ let rerenderEntireTree = (state) => { //функция которую вызыв
           Dialogs={state.dialogsPage.Dialogs}
           Messages={state.dialogsPage.Messages}
           dispatch={store.dispatch.bind(store)}
+          store = {store}
 />
       </BrowserRouter >
     </React.StrictMode>,
