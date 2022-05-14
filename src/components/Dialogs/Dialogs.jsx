@@ -8,11 +8,17 @@ const Dialogs = (props) => {
     let newMessageElement = React.createRef();
     let addMessage = () => {
         let text = newMessageElement.current.value;
-        alert(text)
-    }
+        alert(text)}
+
     let dialogsElement = props.Dialogs.map(d => <DialogItem name={d.name} id={d.id} />)
     let messagesElement = props.Messages.map(m => <Message message={m.message} id={m.id} />)
-    let onsendmessageclick = () => { }
+    
+    // let newMessageBody = props.state.newMessageBody // ПУСТОЙ ЭКРАН СМЕРТИ
+    let onsendmessageclick = () => {}
+    let onNewMessageChange = (e) => {
+        let body = e.target.value
+        props.store.sispatch()
+    }
     return (
         <div className={s.dialogs}>
             <div className={s.dialogs_items}>
@@ -26,6 +32,7 @@ const Dialogs = (props) => {
                         className={s.margin_left}
                         ref={newMessageElement}
                         value='2'
+                        onChange = {onNewMessageChange}
                     ></textarea>
                     <div className={s.margin_left} >
                         <button
