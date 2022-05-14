@@ -1,13 +1,21 @@
+const ADD_POST = 'ADD-POST'
+const UPDATE_NEW_POST_TEXT =  'UPDATE-NEW-POST-TEXT'
+const UPDATE_NEW_MESSAGE_TEXT =  'UPDATE-NEW-MESSAGE-TEXT'     //ИСПОЛЬЗУЕМ ЭТИ КОНСТАНТЫ ЧТОБЫ НЕ ОПЕРЧАТАТЬСЯ  = )
+const SEND_MESSAGE = 'SEND-MESSAGE'
+
 let store = {
     _state: {
         profilePage: {
+            newPostsText: '',
+
             Posts: [{ id: 1, message: 'Hi guys', LikesCount: 2 },
             { id: 2, message: 'hello everybody', LikesCount: 0 },
             { id: 3, message: 'my name is john', LikesCount: 1 },
             { id: 4, message: 'I am  here', LikesCount: 8 }],
-            newPostsText: ''
+            
         },
         dialogsPage: {
+            newMessageBody: '', //АКТУАЛЬНОЕ ЗНАЧЕНИЕ В  TEXT-AREA
             Dialogs: [
                 { id: 1, name: 'Dima' },
                 { id: 2, name: 'Andrey' },
@@ -22,7 +30,8 @@ let store = {
                 { id: 4, message: 'hi' },
                 { id: 5, message: 'hi Viktor' },],
         },
-    },
+        },
+
     _callSubscriber() { },
 
     getstate() {
@@ -33,7 +42,7 @@ let store = {
     },
 
     dispatch(action) {
-        if (action.type === 'ADD-POST') {
+        if (action.type === ADD_POST) {
             let newPost = {
                 id: 5,
                 message: this._state.profilePage.newPostsText,
@@ -43,22 +52,35 @@ let store = {
             this._state.profilePage.newPostsText = ''
             this._callSubscriber(this._state)
         }
-        else if(action.type === 'UPDATE-NEW-POST-TEXT'){
+        else if(action.type === UPDATE_NEW_POST_TEXT){
             this._state.profilePage.newPostsText = action.newText
             this._callSubscriber(this._state)
+        }
+        else if (action.type === UPDATE_NEW_MESSAGE_TEXT ){
+            this._state.dialogsPage.newMessageBody = action.text
+            this._callSubscriber(this._state)
+
+        }
+        else if (action.type === SEND_MESSAGE ){
+
+            this._state.dialogsPage.newMessageBody = ''
+            this._state.dialogsPage.newMessageBody.push( { id: 6, message: 'hi Viktor' })
+            
+            this._callSubscriber(this._state)
+
         }
     },
 }
 export const addPostActionCreator = () => {
     return(
-       { type: 'ADD-POST' }
+       { type: ADD_POST }
     )
 
 }
 
  export const updateNewPostTextActionCretor = (text) => {
     return(
-        {type: 'UPDATE-NEW-POST-TEXT', newText:text }
+        {type: UPDATE_NEW_POST_TEXT, newText:text }
     )
 
 }
