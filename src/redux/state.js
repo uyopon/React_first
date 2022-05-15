@@ -32,7 +32,6 @@ let store = {
                 { id: 5, message: 'hi Viktor' },],
         },
         },
-
     _callSubscriber() { }, // rerenderEntireTree
 
     getstate() {
@@ -41,7 +40,6 @@ let store = {
     subscribe(observer) { //OBSERVER =rerenderEntireTree
         this._callSubscriber = observer ///НАБЛЮДАТЕЛЬ (ПАТТЕРН)-СПРОСЯТ НА СОБЕСЕДОВАНИИ
     },
-
     dispatch(action) {
         if (action.type === ADD_POST) {
             let newPost = {
@@ -58,11 +56,7 @@ let store = {
             this._callSubscriber(this._state)
         }
 
-
-
-
-
-        else if (action.type === UPDATE_NEW_MESSAGE_TEXT ){
+        else if (action.type === UPDATE_NEW_MESSAGE_TEXT){
             this._state.dialogsPage.newMessageBody = action.body
             this._callSubscriber(this._state)
         }
@@ -87,7 +81,6 @@ export const addPostActionCreator = () => {
     )
 }
 
-
 export const addMessgeActionCreator = () => {
     return(
        { type: SEND_MESSAGE  }
@@ -99,8 +92,6 @@ export const addMessgeActionCreator = () => {
         {type: UPDATE_NEW_MESSAGE_TEXT , body: text }
     )
 }
-
-
 
 export default store
 

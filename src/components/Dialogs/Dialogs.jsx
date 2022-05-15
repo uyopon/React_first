@@ -3,18 +3,12 @@ import { NavLink } from 'react-router-dom';
 import s from './Dialogs.module.css'
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
-import updateNewMessageTextActionCretor from '../../redux/state'
-import addMessgeActionCreator from '../../redux/state'
+import addMessgeActionCreator, { updateNewMessageTextActionCretor } from '../../redux/state'
 
 const Dialogs = (props) => {
-    
-    // let store = props.store.getstate().dialogsPage
+    console.log(props)
     
     let newMessageElement = React.createRef(); //CREATE REF
-
-    // let addMessage = () => {
-    //     let text = newMessageElement.current.value;
-    //     alert(text)}
 
     let dialogsElement = props.Dialogs.map(d => <DialogItem name={d.name} id={d.id} />)
     let messagesElement = props.Messages.map(m => <Message message={m.message} id={m.id} />)
@@ -25,8 +19,8 @@ const Dialogs = (props) => {
         props.dispatch(addMessgeActionCreator())
     }
     let onPostChange = () => {
-        let body = newMessageElement.current.value;
-        let action = updateNewMessageTextActionCretor(body)
+        let text = newMessageElement.current.value;
+        let action = updateNewMessageTextActionCretor(text)
         props.dispatch(action)
     }
     return (
@@ -41,7 +35,7 @@ const Dialogs = (props) => {
                     <textarea
                         className={s.margin_left}
                         ref={newMessageElement}
-                        value = {newMessageBody} //IS COMING
+                        value = {props.newMessageBody} //IS COMING
                         onChange = {onPostChange}
                     ></textarea>
                     <div className={s.margin_left} >
