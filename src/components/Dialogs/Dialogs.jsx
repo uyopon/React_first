@@ -7,14 +7,14 @@ import updateNewMessageTextActionCretor from '../../redux/state'
 import addMessgeActionCreator from '../../redux/state'
 
 const Dialogs = (props) => {
-    console.log(props)
-    let store = props.store.getstate().dialogsPage
+    
+    // let store = props.store.getstate().dialogsPage
     
     let newMessageElement = React.createRef(); //CREATE REF
 
-    let addMessage = () => {
-        let text = newMessageElement.current.value;
-        alert(text)}
+    // let addMessage = () => {
+    //     let text = newMessageElement.current.value;
+    //     alert(text)}
 
     let dialogsElement = props.Dialogs.map(d => <DialogItem name={d.name} id={d.id} />)
     let messagesElement = props.Messages.map(m => <Message message={m.message} id={m.id} />)
@@ -22,11 +22,12 @@ const Dialogs = (props) => {
     let newMessageBody = props.newMessageBody
 
     let onsendmessageclick = () => {
-        props.store.dispatch(addMessgeActionCreator())
+        props.dispatch(addMessgeActionCreator())
     }
-    let onNewMessageChange = (e) => {
-        let body = e.target.value
-        props.store.dispatch(updateNewMessageTextActionCretor(body))
+    let onPostChange = () => {
+        let body = newMessageElement.current.value;
+        let action = updateNewMessageTextActionCretor(body)
+        props.dispatch(action)
     }
     return (
         <div className={s.dialogs}>
@@ -40,8 +41,8 @@ const Dialogs = (props) => {
                     <textarea
                         className={s.margin_left}
                         ref={newMessageElement}
-                        value = {newMessageBody}
-                        onChange = {onNewMessageChange}
+                        value = {newMessageBody} //IS COMING
+                        onChange = {onPostChange}
                     ></textarea>
                     <div className={s.margin_left} >
                         <button

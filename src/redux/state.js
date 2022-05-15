@@ -16,7 +16,7 @@ let store = {
             
         },
         dialogsPage: {
-            newMessageBody: '', //АКТУАЛЬНОЕ ЗНАЧЕНИЕ В  TEXT-AREA
+            newMessageBody: '228', //АКТУАЛЬНОЕ ЗНАЧЕНИЕ В  TEXT-AREA
             Dialogs: [
                 { id: 1, name: 'Dima' },
                 { id: 2, name: 'Andrey' },
