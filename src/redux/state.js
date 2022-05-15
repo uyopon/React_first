@@ -33,12 +33,12 @@ let store = {
         },
         },
 
-    _callSubscriber() { },
+    _callSubscriber() { }, // rerenderEntireTree
 
     getstate() {
-        return this._state    //THIS
+        return this._state    
     },
-    subscribe(observer) {
+    subscribe(observer) { //OBSERVER =rerenderEntireTree
         this._callSubscriber = observer ///НАБЛЮДАТЕЛЬ (ПАТТЕРН)-СПРОСЯТ НА СОБЕСЕДОВАНИИ
     },
 
