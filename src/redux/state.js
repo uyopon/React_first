@@ -16,7 +16,7 @@ let store = {
             
         },
         dialogsPage: {
-            newMessageBody: '228', //АКТУАЛЬНОЕ ЗНАЧЕНИЕ В  TEXT-AREA
+            newMessageBody: '', //АКТУАЛЬНОЕ ЗНАЧЕНИЕ В  TEXT-AREA
             Dialogs: [
                 { id: 1, name: 'Dima' },
                 { id: 2, name: 'Andrey' },
@@ -63,7 +63,7 @@ let store = {
         else if (action.type === SEND_MESSAGE ){
             let body = this._state.dialogsPage.newMessageBody
             this._state.dialogsPage.newMessageBody = ''
-            this._state.dialogsPage.newMessageBody.push( { id: 6, message: body })
+            this._state.dialogsPage.Messages.push( { id: 6, message: body })
             
             this._callSubscriber(this._state)
         }
