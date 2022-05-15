@@ -10,7 +10,8 @@ const Dialogs = (props) => {
     console.log(props)
     let store = props.store.getstate().dialogsPage
     
-    let newMessageElement = React.createRef();
+    let newMessageElement = React.createRef(); //CREATE REF
+
     let addMessage = () => {
         let text = newMessageElement.current.value;
         alert(text)}
@@ -39,7 +40,7 @@ const Dialogs = (props) => {
                     <textarea
                         className={s.margin_left}
                         ref={newMessageElement}
-                        value='2'
+                        value = {newMessageBody}
                         onChange = {onNewMessageChange}
                     ></textarea>
                     <div className={s.margin_left} >
