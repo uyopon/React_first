@@ -4,13 +4,13 @@ const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT'     //ИСПОЛЬЗУ
 const dialogsPage_reducer = (state, action) => {
 
     if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
-        state.dialogsPage.newMessageBody = action.body
+        state.newMessageBody = action.body
 
     }
     else if (action.type === SEND_MESSAGE) {
-        let body = state.dialogsPage.newMessageBody
-        state.dialogsPage.newMessageBody = ''
-        state.dialogsPage.Messages.push({ id: 6, message: body })
+        let body = state.newMessageBody
+        state.newMessageBody = ''
+        state.Messages.push({ id: 6, message: body })
     }
     return state
 }
