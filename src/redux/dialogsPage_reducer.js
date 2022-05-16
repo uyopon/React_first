@@ -8,7 +8,7 @@ const dialogsPage_reducer = (state, action) => {
 
     }
     else if (action.type === SEND_MESSAGE) {
-        let body = this._state.dialogsPage.newMessageBody
+        let body = state.dialogsPage.newMessageBody
         state.dialogsPage.newMessageBody = ''
         state.dialogsPage.Messages.push({ id: 6, message: body })
     }
