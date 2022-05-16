@@ -1,8 +1,0 @@
-const dialogsPage_reducer = (state, action) => {
-
-
-
-}
-
-
-export default dialogsPage_reducer
