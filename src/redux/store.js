@@ -12,7 +12,7 @@ let store = {
             { id: 4, message: 'I am  here', LikesCount: 8 }],
         },
         dialogsPage: {
-            newMessageBody: '', //АКТУАЛЬНОЕ ЗНАЧЕНИЕ В  TEXT-AREA
+            newMessageBody: '', 
             Dialogs: [
                 { id: 1, name: 'Dima' },
                 { id: 2, name: 'Andrey' },
@@ -28,12 +28,12 @@ let store = {
                 { id: 5, message: 'hi Viktor' },],
         },
     },
-    _callSubscriber() { }, // rerenderEntireTree
+    _callSubscriber() { },   // rerenderEntireTree
     getstate() {
         return this._state
     },
-    subscribe(observer) { //OBSERVER =rerenderEntireTree
-        this._callSubscriber = observer ///НАБЛЮДАТЕЛЬ (ПАТТЕРН)-СПРОСЯТ НА СОБЕСЕДОВАНИИ
+    subscribe(observer) {    //OBSERVER =rerenderEntireTree
+        this._callSubscriber = observer    ///НАБЛЮДАТЕЛЬ (ПАТТЕРН)-СПРОСЯТ НА СОБЕСЕДОВАНИИ
     },
 
 

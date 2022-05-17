@@ -1,7 +1,26 @@
 const SEND_MESSAGE = 'SEND-MESSAGE'
 const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT'     //ИСПОЛЬЗУЕМ ЭТИ КОНСТАНТЫ ЧТОБЫ НЕ ОПЕРЧАТАТЬСЯ  = )
 
-const dialogsPage_reducer = (state, action) => {
+let initialState = {
+    newMessageBody: '', 
+    Dialogs: [
+        { id: 1, name: 'Dima' },
+        { id: 2, name: 'Andrey' },
+        { id: 3, name: 'Sveta' },
+        { id: 4, name: 'Sasha' },
+        { id: 5, name: 'Viktor' },
+        { id: 6, name: 'Valera' },],
+    Messages: [
+        { id: 1, message: 'hi' },
+        { id: 2, message: 'how are you' },
+        { id: 3, message: 'yo' },
+        { id: 4, message: 'hi' },
+        { id: 5, message: 'hi Viktor' },],
+}
+
+
+
+const dialogsPage_reducer = (state = initialState, action) => {
 
     if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
         state.newMessageBody = action.body

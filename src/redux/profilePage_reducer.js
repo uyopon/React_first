@@ -1,7 +1,16 @@
 const ADD_POST = 'ADD-POST'
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
 
-const profilePage_reducer = (state, action) => {
+
+let initialState =  {
+    newPostsText: '',
+    Posts: [{ id: 1, message: 'Hi guys', LikesCount: 2 },
+    { id: 2, message: 'hello everybody', LikesCount: 0 },
+    { id: 3, message: 'my name is john', LikesCount: 1 },
+    { id: 4, message: 'I am  here', LikesCount: 8 }],
+}
+
+const profilePage_reducer = (state = initialState , action) => {
     
     if (action.type === ADD_POST) {
         if(state.newPostsText === ''){return state} //=)
