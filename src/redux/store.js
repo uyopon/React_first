@@ -29,6 +29,7 @@ let store = {
         },
     },
     _callSubscriber() { },   // rerenderEntireTree
+    
     getstate() {
         return this._state
     },
@@ -45,10 +46,6 @@ let store = {
 
     },
 }
-
-
-
-
 
 
 export default store

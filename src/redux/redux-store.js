@@ -17,4 +17,3 @@ let store = legacy_createStore(reducers)
 export default store
 
 
-
