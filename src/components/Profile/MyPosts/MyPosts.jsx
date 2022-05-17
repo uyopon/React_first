@@ -1,5 +1,6 @@
 import React from 'react';
-import { addPostActionCreator, updateNewPostTextActionCretor } from '../../../redux/state'; //------IMPORT ACTION(CALLBACKS ВОЗВРАЩАЮЩИЕ ACTION (ОБЪЕКТЫ СО СВОЙСТВОМ TYPE))
+import { addPostActionCreator, updateNewPostTextActionCretor } from '../../../redux/profilePage_reducer';
+
 import s from './MyPosts.module.css'
 import Post from './Post/Post'
 

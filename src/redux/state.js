@@ -1,9 +1,6 @@
 import dialogsPage_reducer from "./dialogsPage_reducer"
 import profilePage_reducer from "./profilePage_reducer"
-const ADD_POST = 'ADD-POST'
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
-const SEND_MESSAGE = 'SEND-MESSAGE'
-const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT'     //ИСПОЛЬЗУЕМ ЭТИ КОНСТАНТЫ ЧТОБЫ НЕ ОПЕРЧАТАТЬСЯ  = )
+
 
 let store = {
     _state: {
@@ -50,29 +47,9 @@ let store = {
 }
 
 
-export const addPostActionCreator = () => {
-    return (
-        { type: ADD_POST }
-    )
-}
 
-export const updateNewPostTextActionCretor = (text) => {
-    return (
-        { type: UPDATE_NEW_POST_TEXT, newText: text }
-    )
-}
 
-export const addMessgeActionCreator = () => {
-    return (
-        { type: SEND_MESSAGE }
-    )
-}
 
-export const updateNewMessageTextActionCretor = (text) => {
-    return (
-        { type: UPDATE_NEW_MESSAGE_TEXT, body: text }
-    )
-}
 
 export default store
 
