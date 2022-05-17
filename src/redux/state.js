@@ -41,7 +41,7 @@ let store = {
 
 
     dispatch(action) {
-        console.log(action)
+        
         this._state.profilePage = profilePage_reducer(this._state.profilePage, action)
         this._state.dialogsPage = dialogsPage_reducer(this._state.dialogsPage, action)
         this._callSubscriber(this._state)

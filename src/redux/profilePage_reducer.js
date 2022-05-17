@@ -2,8 +2,9 @@ const ADD_POST = 'ADD-POST'
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
 
 const profilePage_reducer = (state, action) => {
-    console.log(state)
+    
     if (action.type === ADD_POST) {
+        if(state.newPostsText === ''){return state} //=)
         let newPost = {
             id: 5,
             message: state.newPostsText,
