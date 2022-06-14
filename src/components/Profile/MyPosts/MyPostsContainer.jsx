@@ -24,7 +24,9 @@ const MyPostsContainer = (props) => {
 
     
 
-    return (<MyPosts updateNewPostText={onPostChange} addPost= {addPost} Posts = {props.profilePage_reducer.Posts}/>)
+    return (<MyPosts updateNewPostText={onPostChange} addPost= {addPost} Posts = {props.profilePage_reducer.Posts}
+        newPostsText = {props.profilePage_reducer.newPostsText}/>)
+        
 }
 
 export default MyPostsContainer

@@ -8,6 +8,7 @@ import Profile from './components/Profile/Profile'
 import Music from './components/Music/Music';
 import News from './components/News/News'
 import Settings from './components/settings/settings'
+import DialogsContainer from './components/Dialogs/DialogsContainer';
 
 const app = (props) => {
     return (
@@ -24,8 +25,8 @@ const app = (props) => {
                     <Route path='profile/' element={<Profile profilePage_reducer = {props.profilePage_reducer} dispatch = {props.dispatch}
                       />}  />
 
-                    <Route path='dialogs/*' element={<Dialogs Dialogs ={props.Dialogs} Messages ={props.Messages } dispatch = {props.dispatch} 
-                     newMessageBody  = {props.newMessageBody}/>} /> 
+                    <Route path='dialogs/*' element={<DialogsContainer dialogsPage_reducer= {props.dialogsPage_reducer}  dispatch = {props.dispatch} 
+                     />} /> 
 
 
                     

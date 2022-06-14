@@ -17,13 +17,12 @@ const Dialogs = (props) => {
     let newMessageBody = props.newMessageBody
 
     let onsendmessageclick = () => {
-        let action  = addMessgeActionCreator()
-        props.dispatch(action)
+        props.onsendmessageclick()
     }
+    
     let onPostChange = () => {
         let text = newMessageElement.current.value;
-        let action = updateNewMessageTextActionCretor(text)
-        props.dispatch(action)
+        props.onPostChange(text)
     }
     return (
         <div className={s.dialogs}>
