@@ -6,8 +6,6 @@ import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 
-
-
 let rerenderEntireTree = (state) => { //функция которую вызывают для rerender (переотрисовки и передают ей актуальный state)
   
   ReactDOM.render(
@@ -19,8 +17,7 @@ let rerenderEntireTree = (state) => { //функция которую вызыв
           Dialogs={state.dialogsPage.Dialogs}
           Messages={state.dialogsPage.Messages}
           dispatch={store.dispatch.bind(store)}
-          newMessageBody = {state.dialogsPage.newMessageBody}
-         
+          newMessageBody = {state.dialogsPage.newMessageBody}      
 />
       </BrowserRouter >
     </React.StrictMode>,
@@ -29,18 +26,11 @@ let rerenderEntireTree = (state) => { //функция которую вызыв
   );
 }
 
-// store.getstate()
-
-rerenderEntireTree(store.getstate())
+rerenderEntireTree(store.getState())
 
 store.subscribe(()=>{
-  let state = store.getstate()
+  let state = store.getState()
   rerenderEntireTree(state)
-
-
-
 })
-
-
 
 reportWebVitals();//Инструмент для обнаружения потенциальных проблем в приложении
