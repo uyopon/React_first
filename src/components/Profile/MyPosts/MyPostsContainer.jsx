@@ -10,14 +10,14 @@ const MyPostsContainer = (props) => {
 
     let addPost = () => {
        
-        props.store.dispatch(addPostActionCreator())
+        props.dispatch(addPostActionCreator())
     }
 
 
 
 
     let onPostChange = (text) => {
-        props.store.dispatch(updateNewPostTextActionCretor(text))
+        props.dispatch(updateNewPostTextActionCretor(text))
     } 
 
   
