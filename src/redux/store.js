@@ -1,6 +1,5 @@
 import dialogsPage_reducer from "./dialogsPage_reducer"
 import profilePage_reducer from "./profilePage_reducer"
-
 let store = {
     _state: {
         profilePage: {
@@ -31,22 +30,19 @@ let store = {
     
     getState() {
         return this._state
-        
+         
     },
     subscribe(observer) {    //OBSERVER =rerenderEntireTree
         this._callSubscriber = observer    ///НАБЛЮДАТЕЛЬ (ПАТТЕРН)-СПРОСЯТ НА СОБЕСЕДОВАНИИ
     },
 
-    
     dispatch(action) {
         
         this._state.profilePage = profilePage_reducer(this._state.profilePage, action)
         this._state.dialogsPage = dialogsPage_reducer(this._state.dialogsPage, action)
         this._callSubscriber(this._state)
-
     },
 }
-
 
 export default store
 

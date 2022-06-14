@@ -12,12 +12,20 @@ let rerenderEntireTree = (state) => { //функция которую вызыв
     <React.StrictMode>
       <BrowserRouter>
         <App
-          newPostsText = {state.profilePage.newPostsText}  //newPostsText : ''
-          Posts={state.profilePage.Posts}  //POSTS = ПОСТЫ В STATE ПЕРЕДАННЫЕ В Ф ВО ВРЕМЯ ВЫЗОВА
-          Dialogs={state.dialogsPage.Dialogs}
-          Messages={state.dialogsPage.Messages}
+          newPostsText = {state.profilePage_reducer.newPostsText}  
+          Posts={state.profilePage_reducer.Posts}  
+          Dialogs={state.dialogsPage_reducer.Dialogs}
+          Messages={state.dialogsPage_reducer.Messages}
           dispatch={store.dispatch.bind(store)}
-          newMessageBody = {state.dialogsPage.newMessageBody}      
+          newMessageBody = {state.dialogsPage_reducer.newMessageBody}   
+
+          
+          // newPostsText = {state.profilePage.newPostsText}  
+          // Posts={state.profilePage.Posts}  
+          // Dialogs={state.dialogsPage.Dialogs}
+          // Messages={state.dialogsPage.Messages}
+          // dispatch={store.dispatch.bind(store)}
+          // newMessageBody = {state.dialogsPage.newMessageBody} 
 />
       </BrowserRouter >
     </React.StrictMode>,
