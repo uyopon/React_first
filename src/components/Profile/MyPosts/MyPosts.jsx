@@ -7,11 +7,9 @@ import Post from './Post/Post'
 const MyPosts = (props) => {
 
 
-
     let postsElements = props.Posts.map(d => <Post id={d.id} message={d.message} LikesCount={d.LikesCount} />)
 
     let newPostElement = React.createRef();
-
 
 
     let addPost = () => {
@@ -19,16 +17,10 @@ const MyPosts = (props) => {
      }
 
 
-
-
-
     let onPostChange = () => {
         let text = newPostElement.current.value;
         props.updateNewPostText(text)
     }
-
-
-
 
 
     return (

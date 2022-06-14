@@ -9,8 +9,6 @@ import Dialogs from './Dialogs';
 
 const DialogsContainer = (props) => {
     
-    
-
 
     let onsendmessageclick = () => {
         props.dispatch(addMessgeActionCreator())
@@ -27,7 +25,10 @@ const DialogsContainer = (props) => {
 
 export default DialogsContainer;
 
+//Messages = {props.dialogsPage_reducer.Messages}  = сообщения которые отрисовывает компонента
+//Dialogs = {props.dialogsPage_reducer.Dialogs} = имена которые отрисовывает компонента
+//newMessageBody = {props.dialogsPage_reducer.newMessageBody} = актуальное значение в text-area
 
+//onsendmessageclick = {onsendmessageclick} = добавляет сообщ при нажатии 
+//onPostChange = {onPostChange} = диспатчит text from text-area
 
-// return (<MyPosts updateNewPostText={onPostChange} addPost= {addPost} Posts = {props.profilePage_reducer.Posts}
-//     newPostsText = {props.profilePage_reducer.newPostsText}/>)

@@ -8,18 +8,17 @@ import { addMessgeActionCreator, updateNewMessageTextActionCretor } from '../../
 
 const Dialogs = (props) => {
     console.log(props)
-    
+
     let newMessageElement = React.createRef(); //CREATE REF
 
     let dialogsElement = props.Dialogs.map(d => <DialogItem name={d.name} id={d.id} />)
     let messagesElement = props.Messages.map(m => <Message message={m.message} id={m.id} />)
 
-    let newMessageBody = props.newMessageBody
 
     let onsendmessageclick = () => {
         props.onsendmessageclick()
     }
-    
+
     let onPostChange = () => {
         let text = newMessageElement.current.value;
         props.onPostChange(text)
@@ -36,8 +35,8 @@ const Dialogs = (props) => {
                     <textarea
                         className={s.margin_left}
                         ref={newMessageElement}
-                        value = {props.newMessageBody} //IS COMING
-                        onChange = {onPostChange}
+                        value={props.newMessageBody} //IS COMING
+                        onChange={onPostChange}
                     ></textarea>
                     <div className={s.margin_left} >
                         <button
