@@ -1,5 +1,6 @@
 import React from 'react';
 import MyPosts from './MyPosts/MyPosts';
+import MyPostsContainer from './MyPosts/MyPostsContainer';
 import ProfileInfo from './ProfileInfo/ProfileInfo'
 
 
@@ -14,8 +15,8 @@ const Profile = (props) => {
             <ProfileInfo/>
 
 
-            <MyPosts Posts = {props.Posts}
-             newPostsText={props.newPostsText} dispatch = {props.dispatch}/>
+            <MyPostsContainer 
+             profilePage_reducer = {props.profilePage_reducer} dispatch = {props.dispatch}/>
 
 
 

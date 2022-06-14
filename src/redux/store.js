@@ -26,7 +26,11 @@ let store = {
                 { id: 5, message: 'hi Viktor' },],
         },
     },
-    _callSubscriber() { },   // rerenderEntireTree
+    _callSubscriber() { },   
+
+    // let state = store.getState()
+    // rerenderEntireTree(state)
+
     
     getState() {
         return this._state

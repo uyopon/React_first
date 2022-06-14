@@ -12,12 +12,16 @@ let rerenderEntireTree = (state) => { //функция которую вызыв
     <React.StrictMode>
       <BrowserRouter>
         <App
-          newPostsText = {state.profilePage_reducer.newPostsText}  
-          Posts={state.profilePage_reducer.Posts}  
+          profilePage_reducer = {state.profilePage_reducer}
+          // newPostsText = {state.profilePage_reducer.newPostsText}  
+          // Posts={state.profilePage_reducer.Posts}
+          // dialogsPage = {state.dialogsPage_reducer}
           Dialogs={state.dialogsPage_reducer.Dialogs}
           Messages={state.dialogsPage_reducer.Messages}
           dispatch={store.dispatch.bind(store)}
           newMessageBody = {state.dialogsPage_reducer.newMessageBody}   
+
+          
 
           
           // newPostsText = {state.profilePage.newPostsText}  
