@@ -5,8 +5,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-import StoreContext from './StoreContex'
-import { Provider } from './StoreContex'
+import { Provider } from 'react-redux'
 
 
 let rerenderEntireTree = (state) => { //функция которую вызывают для rerender (переотрисовки и передают ей актуальный state)
