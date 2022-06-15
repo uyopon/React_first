@@ -12,11 +12,11 @@ let rerenderEntireTree = (state) => { //функция которую вызыв
   ReactDOM.render(
     <React.StrictMode>
       <BrowserRouter>
-        <StoreContext.Provider>
+        <StoreContext.Provider value = {store}>
           <App
-            profilePage_reducer={state.profilePage_reducer}
-            dialogsPage_reducer={state.dialogsPage_reducer}
-            dispatch={store.dispatch.bind(store)}
+            // profilePage_reducer={state.profilePage_reducer}
+            // dialogsPage_reducer={state.dialogsPage_reducer}
+            // dispatch={store.dispatch.bind(store)}
 
 
 

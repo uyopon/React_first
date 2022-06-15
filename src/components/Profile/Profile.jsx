@@ -15,8 +15,8 @@ const Profile = (props) => {
             <ProfileInfo/>
 
 
-            <MyPostsContainer 
-             profilePage_reducer = {props.profilePage_reducer} dispatch = {props.dispatch}/>
+            <MyPostsContainer />
+             
 
 
 
