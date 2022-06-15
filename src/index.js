@@ -6,13 +6,15 @@ import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import StoreContext from './StoreContex'
+import { Provider } from './StoreContex'
+
 
 let rerenderEntireTree = (state) => { //функция которую вызывают для rerender (переотрисовки и передают ей актуальный state)
 
   ReactDOM.render(
     <React.StrictMode>
       <BrowserRouter>
-        <StoreContext.Provider value = {store}>
+        <Provider store = {store}>
           <App
             // profilePage_reducer={state.profilePage_reducer}
             // dialogsPage_reducer={state.dialogsPage_reducer}
@@ -25,7 +27,7 @@ let rerenderEntireTree = (state) => { //функция которую вызыв
           // dispatch={store.dispatch.bind(store)}
           // newMessageBody = {state.dialogsPage.newMessageBody} 
           />
-        </StoreContext.Provider>
+        </Provider>
       </BrowserRouter >
     </React.StrictMode>,
 
