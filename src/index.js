@@ -18,9 +18,6 @@ let rerenderEntireTree = (state) => { //функция которую вызыв
             // dialogsPage_reducer={state.dialogsPage_reducer}
             // dispatch={store.dispatch.bind(store)}
 
-
-
-
           // newPostsText = {state.profilePage.newPostsText}  
           // Posts={state.profilePage.Posts}  
           // Dialogs={state.dialogsPage.Dialogs}
