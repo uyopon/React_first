@@ -1,7 +1,6 @@
 const ADD_POST = 'ADD-POST'
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
 
-
 let initialState =  {
     newPostsText: '',
     Posts: [{ id: 1, message: 'Hi guys', LikesCount: 2 },
@@ -11,23 +10,53 @@ let initialState =  {
 }
 
 const profilePage_reducer = (state = initialState , action) => {
+    let stateCopy = {...state}
     
-    if (action.type === ADD_POST) {
-        if(state.newPostsText === ''){return state} //=)
-        let newPost = {
-            id: 5,
-            message: state.newPostsText,
-            LikesCount: 5
-        };
-        state.Posts.push(newPost)
-        state.newPostsText = ''
-
+    switch(action.type){
+        
+        
+        case ADD_POST :{
+            if(state.newPostsText === ''){return state} //=)
+            let newPost = {
+                id: 5,
+                message: state.newPostsText,
+                LikesCount: 5
+            };
+            // let stateCopy = {...state}
+            stateCopy.Posts = [...state.Posts]
+            stateCopy.Posts.push(newPost)
+            stateCopy.newPostsText = ''
+            return stateCopy
+        }
+        case UPDATE_NEW_POST_TEXT :{
+            let stateCopy = {...state}
+            stateCopy.newPostsText = action.newText
+            return stateCopy
+        }
+        default:
+            return state
+        
     }
-    else if (action.type === UPDATE_NEW_POST_TEXT) {
-        state.newPostsText = action.newText
 
-    }
-    return state
+    // if (action.type === ADD_POST) {
+
+    //     if(state.newPostsText === ''){return state} //=)
+
+    //     let newPost = {
+    //         id: 5,
+    //         message: state.newPostsText,
+    //         LikesCount: 5
+    //     };
+
+    //     state.Posts.push(newPost)
+    //     state.newPostsText = ''
+
+    // }
+    // else if (action.type === UPDATE_NEW_POST_TEXT) {
+    //     state.newPostsText = action.newText
+
+    // }
+    // return state
 
 }
 export const addPostActionCreator = () => {

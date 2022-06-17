@@ -1,8 +1,8 @@
 const SEND_MESSAGE = 'SEND-MESSAGE'
-const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT'     
+const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT'
 
 let initialState = {
-    newMessageBody: '', 
+    newMessageBody: '',
     Dialogs: [
         { id: 1, name: 'Dima' },
         { id: 2, name: 'Andrey' },
@@ -19,20 +19,45 @@ let initialState = {
 }
 
 
-
 const dialogsPage_reducer = (state = initialState, action) => {
+    let stateCopy = {
+        ...state, //Messages равны ссылке в state
+        // Messages: [...state.Messages] // перезаписали Messages
+    }
 
-    if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
-        state.newMessageBody = action.body
+
+    switch (action.type) {
+        case UPDATE_NEW_MESSAGE_TEXT: {
+            stateCopy.newMessageBody = action.body
+            return stateCopy
+
+        }
+        case SEND_MESSAGE: {
+            let body = stateCopy.newMessageBody
+            stateCopy.newMessageBody = ''
+            stateCopy.Messages.push({ id: 6, message: body })
+            return stateCopy
+        }
+        default:
+            return state
 
     }
-    else if (action.type === SEND_MESSAGE) {
-        let body = state.newMessageBody
-        state.newMessageBody = ''
-        state.Messages.push({ id: 6, message: body })
-    }
-    return state
+
 }
+
+// const dialogsPage_reducer = (state = initialState, action) => {
+
+//     if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
+//         state.newMessageBody = action.body
+
+//     }
+//     else if (action.type === SEND_MESSAGE) {
+//         let body = state.newMessageBody
+//         state.newMessageBody = ''
+//         state.Messages.push({ id: 6, message: body })
+//     }
+//     return state
+// }
 
 export const addMessgeActionCreator = () => {
     return (

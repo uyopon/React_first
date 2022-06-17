@@ -4,7 +4,7 @@ import MyPosts from './MyPosts';
 import { connect } from 'react-redux'
 
 let mapStateToProps = (state) => {
-    console.log(state)
+    
     return {
         Posts: state.profilePage_reducer.Posts,
         newPostsText: state.profilePage_reducer.newPostsText
@@ -14,6 +14,7 @@ let mapDispatchtoProps = (dispatch) => {
 
     return {
         onPostChange: (text) => {
+            
             dispatch(updateNewPostTextActionCretor(text))
         },
         addPost: () => {
