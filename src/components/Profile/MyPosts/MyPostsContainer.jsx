@@ -15,6 +15,7 @@ let mapDispatchtoProps = (dispatch) => {
     return {
         onPostChange: (text) => {
             
+            
             dispatch(updateNewPostTextActionCretor(text))
         },
         addPost: () => {
@@ -45,15 +46,6 @@ export default SuperMyPostsContainer
 //                 />)}
 
 //         }</StoreContext.Consumer>)}
-
-
-
-
-
-
-
-
-
 
 
 

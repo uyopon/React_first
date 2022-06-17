@@ -20,29 +20,26 @@ let initialState = {
 
 
 const dialogsPage_reducer = (state = initialState, action) => {
-    let stateCopy = {
-        ...state, //Messages равны ссылке в state
-        // Messages: [...state.Messages] // перезаписали Messages
-    }
-
-
+    
+   
     switch (action.type) {
         case UPDATE_NEW_MESSAGE_TEXT: {
-            stateCopy.newMessageBody = action.body
-            return stateCopy
-
+            return { ...state, newMessageBody: action.body }
         }
         case SEND_MESSAGE: {
-            let body = stateCopy.newMessageBody
-            stateCopy.newMessageBody = ''
-            stateCopy.Messages.push({ id: 6, message: body })
-            return stateCopy
+            
+            
+            return{
+                
+                ...state,
+                Messages: [...state.Messages,{ id: 6, message: state.newMessageBody }], 
+                newMessageBody: '' 
+                
+            } 
         }
         default:
             return state
-
     }
-
 }
 
 // const dialogsPage_reducer = (state = initialState, action) => {

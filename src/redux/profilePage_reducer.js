@@ -1,7 +1,7 @@
 const ADD_POST = 'ADD-POST'
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
 
-let initialState =  {
+let initialState = {
     newPostsText: '',
     Posts: [{ id: 1, message: 'Hi guys', LikesCount: 2 },
     { id: 2, message: 'hello everybody', LikesCount: 0 },
@@ -9,35 +9,32 @@ let initialState =  {
     { id: 4, message: 'I am  here', LikesCount: 8 }],
 }
 
-const profilePage_reducer = (state = initialState , action) => {
-    let stateCopy = {...state}
+const profilePage_reducer = (state = initialState, action) => {
     
-    switch(action.type){
 
-
-        
-        
-         case ADD_POST :{
-             if(state.newPostsText === ''){return state} //=)
-             let newPost = {
-                 id: 5,
-                 message: state.newPostsText,
-                 LikesCount: 5
-             };
-             // let stateCopy = {...state}
-             stateCopy.Posts = [...state.Posts]
-             stateCopy.Posts.push(newPost)
-             stateCopy.newPostsText = ''
-             return stateCopy
-         }
-        case UPDATE_NEW_POST_TEXT :{
-            
-            stateCopy.newPostsText = action.newText
-            return stateCopy
+    switch (action.type) {
+        case UPDATE_NEW_POST_TEXT: {
+            return {...state, newPostsText: action.newText }
         }
+
+        case ADD_POST: {
+            if (state.newPostsText === '') { return state } //=)
+            return {
+                ...state,
+                Posts: [
+                    ...state.Posts,
+                    {
+                        id: 5,
+                        message: state.newPostsText,
+                        LikesCount: 5
+                    }],
+                newPostsText: '',
+            }
+        }
+
+        
         default:
             return state
-        
     }
 
     // if (action.type === ADD_POST) {
