@@ -13,23 +13,25 @@ const profilePage_reducer = (state = initialState , action) => {
     let stateCopy = {...state}
     
     switch(action.type){
+
+
         
         
-        case ADD_POST :{
-            if(state.newPostsText === ''){return state} //=)
-            let newPost = {
-                id: 5,
-                message: state.newPostsText,
-                LikesCount: 5
-            };
-            // let stateCopy = {...state}
-            stateCopy.Posts = [...state.Posts]
-            stateCopy.Posts.push(newPost)
-            stateCopy.newPostsText = ''
-            return stateCopy
-        }
+         case ADD_POST :{
+             if(state.newPostsText === ''){return state} //=)
+             let newPost = {
+                 id: 5,
+                 message: state.newPostsText,
+                 LikesCount: 5
+             };
+             // let stateCopy = {...state}
+             stateCopy.Posts = [...state.Posts]
+             stateCopy.Posts.push(newPost)
+             stateCopy.newPostsText = ''
+             return stateCopy
+         }
         case UPDATE_NEW_POST_TEXT :{
-            let stateCopy = {...state}
+            
             stateCopy.newPostsText = action.newText
             return stateCopy
         }
