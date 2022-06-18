@@ -18,7 +18,7 @@ const profilePage_reducer = (state = initialState, action) => {
         }
 
         case ADD_POST: {
-            if (state.newPostsText === '') { return state } //=)
+            if (state.newPostsText === '') { return state } //=))
             return {
                 ...state,
                 Posts: [
