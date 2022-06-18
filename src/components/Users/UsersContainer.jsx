@@ -1,21 +1,26 @@
 import React from 'react';
 import Users from './Users';
 import { connect } from 'react-redux'
+import { followAC, setUsersAC, unfollowAC } from '../../redux/usersPage_reducer';
 
 
 let mapStateToProps = (state) => {
     return {
-        Users: state.usersPage_reducer.Users
+        users: state.usersPage_reducer.Users
     }
 }
 let mapDispatchtoProps = (dispatch) => {
 
     return {
-        onPostChange: (text) => {
-            dispatch(updateNewMessageTextActionCretor(text))
+        follow: (id) => {
+            dispatch(followA(id))
         },
-        onsendmessageclick: () => {
-            dispatch(addMessgeActionCreator())
+        unfollow: (id) => {
+            dispatch(unfollowAC(id))
+        },
+        setUsersAC:(users)=>{
+            dispatch(setUsersAC(users))
+
         }
     }
 }
