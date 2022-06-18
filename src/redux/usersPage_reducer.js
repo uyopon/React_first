@@ -1,5 +1,6 @@
 const FOLLOW = 'FOLLOW'
 const UNFOLLOW = 'UNFOLLOW'
+const SET_USERS = 'SET_USERS'
 
 let initialState = {
     newPostsText: '',
@@ -19,7 +20,7 @@ let initialState = {
     ],
 }
 
-const users_reducer = (state = initialState, action) => {
+const usersPage_reducer = (state = initialState, action) => {
 
 
     switch (action.type) {
@@ -34,7 +35,10 @@ const users_reducer = (state = initialState, action) => {
 
         case UNFOLLOW: {
     return {...state, Users: state.Users.map(u => { if (u.id === action.userID) { return  {...u, followed: false }}return u})}
-}
+}       
+        case(SET_USERS):{
+            return {...state,users: [...state.Users, ...action.users]}
+        }
 
         default:
 return state
@@ -55,4 +59,11 @@ export const unfollowAC = (userID) => {
     )
 }
 
-export default users_reducer
+
+export const setUsersAC = (users) => {
+    return (
+        { type: SET_USERS, users }
+    )
+}
+
+export default usersPage_reducer

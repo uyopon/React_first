@@ -2,10 +2,13 @@ import {combineReducers, legacy_createStore as createStore} from "redux";
 
 import profilePage_reducer from "./profilePage_reducer";
 import dialogsPage_reducer from "./dialogsPage_reducer"
+import usersPage_reducer from "./usersPage_reducer";
 
 let reducers = combineReducers({
     dialogsPage_reducer: dialogsPage_reducer,
-    profilePage_reducer: profilePage_reducer
+    profilePage_reducer: profilePage_reducer,
+    usersPage_reducer: usersPage_reducer
+
 })
 let store = createStore(reducers)
 
