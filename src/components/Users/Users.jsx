@@ -2,13 +2,17 @@ import React from 'react';
 import s from './Users.module.css'
 
 let Users = (props) => {
+    console.log(props)
    
     return (
         <div className={s.container} >
             {props.users.map(u => <div key ={u.id}>
                 <span>
                     <div><img className={s.ava} src={u.photo}></img></div>
-                    <div><button>follow</button></div>
+                    <div>
+                        {u.followed? <button onClick={()=>{props.unfollow(u.id)}}>unfollow</button>:<button onClick={()=>{props.follow(u.id)}} >follow</button> }
+                       
+                    </div>
 
                 </span>
                 <span>

@@ -34,7 +34,9 @@ const usersPage_reducer = (state = initialState, action) => {
 
 
         case UNFOLLOW: {
-    return {...state, Users: state.Users.map(u => { if (u.id === action.userID) { return  {...u, followed: false }}return u})}
+    return {
+        ...state, Users: state.Users.map(u => { if (u.id === action.userID) { return  {...u, followed: false }}return u})
+}
 }       
         case(SET_USERS):{
             return {...state,users: [...state.Users, ...action.users]}

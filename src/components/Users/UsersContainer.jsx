@@ -13,7 +13,7 @@ let mapDispatchtoProps = (dispatch) => {
 
     return {
         follow: (id) => {
-            dispatch(followA(id))
+            dispatch(followAC(id))
         },
         unfollow: (id) => {
             dispatch(unfollowAC(id))
