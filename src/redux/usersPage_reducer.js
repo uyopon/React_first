@@ -24,7 +24,7 @@ const usersPage_reducer = (state = initialState, action) => {
             }
         }
         case SET_USERS: {
-            console.log(action.users)
+           
             return { ...state, Users: [...state.Users, ...action.users] }
         }
 
@@ -36,7 +36,9 @@ const usersPage_reducer = (state = initialState, action) => {
 
 
 export const followAC = (userID) => {
+    console.log(userID)
     return (
+        
         { type: FOLLOW, userID }
     )
 }

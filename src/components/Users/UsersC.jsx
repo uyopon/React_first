@@ -21,7 +21,7 @@ class Users extends React.Component {
                     <span>
                         <div><img className={s.ava} src={u.photos.small != null ? photos.small :ava}></img></div>
                         <div>
-                            {u.followed? <button onClick={()=>{props.unfollow(u.id)}}>unfollow</button>:<button onClick={()=>{props.follow(u.id)}} >follow</button> }
+                            {u.followed? <button onClick={()=>{this.props.unfollow(u.id)}}>unfollow</button>:<button onClick={()=>{this.props.follow(u.id)}} >follow</button> }
                            
                         </div>
     
