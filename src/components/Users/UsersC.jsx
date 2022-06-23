@@ -4,16 +4,19 @@ import * as axios from 'axios'
 import ava from '../../assets/img/ava.png'
 
 class Users extends React.Component {
-    constructor(props) {
-        super(props)
 
+
+
+    
+    componentDidMount(){
         axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
             //https://social-network.samuraijs.com/api/1.0/users - вбиваем в браузер и смотрит get request  
             this.props.setUsersAC(response.data.items)
         })
 
 
-    }//
+    }
+
 
     render() {
         return (
