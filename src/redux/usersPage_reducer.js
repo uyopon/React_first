@@ -7,33 +7,29 @@ let initialState = {
     Users: [],
 }
 
- 
-
 const usersPage_reducer = (state = initialState, action) => {
-
 
     switch (action.type) {
 
-        case FOLLOW:{
-            return  {
-                ...state, Users: state.Users.map(u => { if (u.id === action.userID) { return  {...u, followed: true }}return u})
+        case FOLLOW: {
+            return {
+                ...state, Users: state.Users.map(u => { if (u.id === action.userID) { return { ...u, followed: true } } return u })
 
-}
+            }
         }
 
-
         case UNFOLLOW: {
-    return {
-        ...state, Users: state.Users.map(u => { if (u.id === action.userID) { return  {...u, followed: false }}return u})
-}
-}       
-        case SET_USERS :{
+            return {
+                ...state, Users: state.Users.map(u => { if (u.id === action.userID) { return { ...u, followed: false } } return u })
+            }
+        }
+        case SET_USERS: {
             console.log(action.users)
-            return {...state,users: [...state.Users, ...action.users]}
+            return { ...state, Users: [...state.Users, ...action.users] }
         }
 
         default:
-return state
+            return state
     }
 
 }
