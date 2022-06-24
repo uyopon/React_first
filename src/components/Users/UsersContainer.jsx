@@ -25,6 +25,9 @@ let mapDispatchtoProps = (dispatch) => {
         setUsersAC:(users)=>{
             dispatch(setUsersAC(users))
 
+        },
+        setCurrentPage:()=>{
+            dispatch()
         }
     }
 }
