@@ -29,20 +29,18 @@ const usersPage_reducer = (state = initialState, action) => {
         }
         case SET_USERS: {
            
-            return { ...state, Users: [...state.Users, ...action.users] }
+            return { ...state, Users: action.users }
         }
+
         case SET_CURRENT_PAGE:{
             return { ...state,currentPage: action.currentPage }
         }
-
-        
 
         default:
             return state
     }
 
 }
-
 
 export const followAC = (userID) => {
     console.log(userID)
