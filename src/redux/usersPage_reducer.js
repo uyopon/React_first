@@ -65,4 +65,11 @@ export const setUsersAC = (users) => {
     )
 }
 
+
+export const setCurrentPageAC = (currentPage) => {
+    return (
+        { type: SET_CURRENT_PAGE, currentPage }
+    )
+}
+
 export default usersPage_reducer

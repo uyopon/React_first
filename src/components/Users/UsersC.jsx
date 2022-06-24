@@ -11,17 +11,13 @@ class Users extends React.Component {
         })
     }
     render() {
-        //pageSize: 5
-        //totalUsersCount: 20
-        let pagesCount = Math.ceil(this.props.totalUsersCount/ this.props.pageSize) //console.log(pagesCount) = 4
+        let pagesCount = Math.ceil(this.props.totalUsersCount/ this.props.pageSize) 
         let pages = []
         for(let i=1; i<=pagesCount;i++ ){ //
             pages.push(i)
         }
-        //console.log(pages) = [1, 2, 3, 4]
+        console.log(this.props)
         return (
-            
-            
             <div className={s.container} >
                 <div>
                     {pages.map(p => <span className={this.props.currentPage === p && s.selectedPage} onClick= {()=> {this.props.setCurrentPage(p)}}>{p} </span>)}
