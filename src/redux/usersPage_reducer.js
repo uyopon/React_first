@@ -6,8 +6,8 @@ const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE'
 let initialState = {
     // newPostsText: '',
     Users: [],
-    pageSize:50,
-    totalUsersCount: 100,
+    pageSize:25,
+    totalUsersCount: 200,
     currentPage: 2,
 }
 

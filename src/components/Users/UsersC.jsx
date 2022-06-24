@@ -16,11 +16,7 @@ class Users extends React.Component {
             //https://social-network.samuraijs.com/api/1.0/users - вбиваем в браузер и смотрит get request  
             this.props.setUsersAC(response.data.items)
         })
-        
-
     }
-
-
 
     render() {
         let pagesCount = Math.ceil(this.props.totalUsersCount/ this.props.pageSize) 
