@@ -6,7 +6,10 @@ import { followAC, setUsersAC, unfollowAC } from '../../redux/usersPage_reducer'
 
 let mapStateToProps = (state) => {
     return {
-        users: state.usersPage_reducer.Users
+        users: state.usersPage_reducer.Users,
+        pageSize: state.usersPage_reducer.pageSize,
+        totalUsersCount: state.usersPage_reducer.totalUsersCount,
+        currentPage: state.usersPage_reducer.currentPage,
     }
 }
 let mapDispatchtoProps = (dispatch) => {
