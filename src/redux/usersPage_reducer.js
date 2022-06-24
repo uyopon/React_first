@@ -30,6 +30,7 @@ const usersPage_reducer = (state = initialState, action) => {
         case SET_USERS: {
            
             return { ...state, Users: action.users }
+            
         }
 
         case SET_CURRENT_PAGE:{
@@ -42,32 +43,14 @@ const usersPage_reducer = (state = initialState, action) => {
 
 }
 
-export const followAC = (userID) => {
-    console.log(userID)
-    return (
-        
-        { type: FOLLOW, userID }
-    )
-}
+export const followAC = (userID) => {return ({ type: FOLLOW, userID })}
 
-export const unfollowAC = (userID) => {
-    return (
-        { type: UNFOLLOW, userID }
-    )
-}
+export const unfollowAC = (userID) => {return ({ type: UNFOLLOW, userID })}
 
 
-export const setUsersAC = (users) => {
-    return (
-        { type: SET_USERS, users }
-    )
-}
+export const setUsersAC = (users) => {return ({ type: SET_USERS, users })}
 
 
-export const setCurrentPageAC = (currentPage) => {
-    return (
-        { type: SET_CURRENT_PAGE, currentPage }
-    )
-}
+export const setCurrentPageAC = (currentPage) => {return ({ type: SET_CURRENT_PAGE, currentPage })}
 
 export default usersPage_reducer

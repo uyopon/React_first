@@ -11,7 +11,7 @@ class Users extends React.Component {
         })
     }
     onPageChanged=(pageNumber)=>{ 
-        this.props.setCurrentPage(p)
+        this.props.setCurrentPage(pageNumber)
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`).then(response => {
             //https://social-network.samuraijs.com/api/1.0/users - вбиваем в браузер и смотрит get request  
             this.props.setUsersAC(response.data.items)
@@ -32,13 +32,13 @@ class Users extends React.Component {
         return (
             <div className={s.container} >
                 <div>
-                    {pages.map(p => <span className={this.props.currentPage === p && s.selectedPage} onClick ={()=> {this.onPageChanged(p)}}>{p} </span>)}
+                    {pages.map(p => <span className={this.props.currentPage === p && s.selectedPage} onClick ={()=> {this.onPageChanged(p)} } >{p} </span>)}
 
                 </div>
 
                 {this.props.users.map(u => <div key={u.id}>
                     <span>
-                        <div><img className={s.ava} src={u.photos.small != null ? photos.small : ava}></img></div>
+                        <div><img className={s.ava} src={u.photos.small != null ? u.photos.small : ava}></img></div> 
                         <div>
                             {u.followed ? <button onClick={() => { this.props.unfollow(u.id) }}>unfollow</button> : <button onClick={() => { this.props.follow(u.id) }} >follow</button>}
 
