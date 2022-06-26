@@ -1,6 +1,5 @@
 import React from 'react';
 import s from './Users.module.css'
-import * as axios from 'axios'
 import ava from '../../assets/img/ava.png'
 
 let Users = (props)=> {
