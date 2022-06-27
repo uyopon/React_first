@@ -4,12 +4,12 @@ import './App.css';
 import Dialogs from './components/Dialogs/Dialogs';
 import Header from './components/Header/Header'
 import Nav from './components/Nav/Nav'
-import Profile from './components/Profile/Profile'
 import Music from './components/Music/Music';
 import News from './components/News/News'
 import Settings from './components/settings/settings'
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UsersContainer from './components/Users/UsersContainer';
+import ProfileContainer from './components/Profile/ProfileContainer';
 
 const app = (props) => {
     return (
@@ -19,9 +19,9 @@ const app = (props) => {
             <div className='app-wrapper-content'>
                 <Routes>
 
-                    <Route path='/' element={<Profile  />} /> 
+                    <Route path='/' element={<ProfileContainer  />} /> 
 
-                    <Route path='Profile*' element={<Profile  />}  />
+                    <Route path='Profile*' element={<ProfileContainer  />}  />
 
                     <Route path='dialogs*' element={<DialogsContainer    />} /> 
 
