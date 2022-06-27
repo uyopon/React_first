@@ -37,25 +37,7 @@ const profilePage_reducer = (state = initialState, action) => {
             return state
     }
 
-    // if (action.type === ADD_POST) {
 
-    //     if(state.newPostsText === ''){return state} //=)
-
-    //     let newPost = {
-    //         id: 5,
-    //         message: state.newPostsText,
-    //         LikesCount: 5
-    //     };
-
-    //     state.Posts.push(newPost)
-    //     state.newPostsText = ''
-
-    // }
-    // else if (action.type === UPDATE_NEW_POST_TEXT) {
-    //     state.newPostsText = action.newText
-
-    // }
-    // return state
 
 }
 export const addPostActionCreator = () => {
