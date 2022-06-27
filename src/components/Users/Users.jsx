@@ -21,7 +21,7 @@ let Users = (props)=> {
                 <span>
                 
                     <div>
-                        <NavLink to  = '/Profile' activeClassName={s.active}><img className={s.ava} src={u.photos.small != null ? u.photos.small : ava}></img></NavLink>
+                        <NavLink to  = {'./../Profile/' + u.id} activeClassName={s.active}><img className={s.ava} src={u.photos.small != null ? u.photos.small : ava}></img></NavLink>
                     </div> 
 
                     <div>
