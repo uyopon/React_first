@@ -2,6 +2,8 @@ import React from 'react';
 import Profile from './Profile'
 import * as axios from 'axios'
 import { connect } from 'react-redux'
+import { setUserProfile } from '../../redux/profilePage_reducer';
+
 
 class ProfileContainer extends React.Component {
     //задача контейнерной компоненты- быть оберткой дл презентационной компоненты
@@ -13,15 +15,35 @@ class ProfileContainer extends React.Component {
 
         axios.get(`https://social-network.samuraijs.com/api/1.0/profile/2`).then(response => {//response = отклик, реакция,ответ
             this.props.setUserProfile(response.data)
+           
   
         })
     }
+    
     render (){
         return(
-            <Profile/>
+            <Profile {...this.props} profile = {this.props.profile}/>
         )
         }   
+        
 }
 
+let mapStateToProps = (state) => {
+    return {
+        profile: state.profilePage_reducer.profile
 
-export default connect ()(ProfileContainer)
+    }
+}
+let mapDispatchtoProps = (dispatch) => {
+    return {
+        setUserProfile:(profile) => {
+            dispatch(setUserProfile(profile))
+
+        }
+
+    }
+}
+
+export default connect (mapStateToProps, mapDispatchtoProps)(ProfileContainer)
+
+
