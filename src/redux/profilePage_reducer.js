@@ -36,7 +36,8 @@ const profilePage_reducer = (state = initialState, action) => {
             }
         }
         case SET_USER_PROFILE: {
-            // console.log(action.profile) объ пришел=)
+            console.log(action.profile) 
+            //объ пришел=)
             return {...state,profile: action.profile}
 
         }

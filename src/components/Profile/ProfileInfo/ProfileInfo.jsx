@@ -5,7 +5,7 @@ const ProfileInfo = (props) => {
     
 
 
-
+console.log(props)
 
     return (
         <div className={s.container}>
@@ -18,7 +18,7 @@ const ProfileInfo = (props) => {
             </div>
 
             <div className={s.margin_left}>
-                {/* <img crc = {props.profile.photo.large}/> */}
+                {/* <img src = {props.profile.photos.large}/> */}
                 ava+descrtion
             </div>
 
